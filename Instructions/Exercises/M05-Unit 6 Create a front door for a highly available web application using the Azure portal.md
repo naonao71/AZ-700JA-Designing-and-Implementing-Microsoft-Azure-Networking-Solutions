@@ -1,4 +1,4 @@
-﻿---
+---
 Exercise:
     title: 'M05-ユニット 6 Azure portal を使用して高可用性 Web アプリケーションのフロント ドアを作成する'
     module: 'モジュール - Azure で HTTP(S) トラフィックの負荷を分散する'
