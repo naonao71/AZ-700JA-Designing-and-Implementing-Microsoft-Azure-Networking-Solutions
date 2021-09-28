@@ -1,4 +1,4 @@
-﻿---
+---
 Exercise:
     title: 'M06-ユニット 9 Azure Firewall Manager を使用して仮想ハブのセキュリティを保護する'
     module: 'モジュール - ネットワーク セキュリティの設計と実装'
