@@ -1,4 +1,4 @@
-﻿---
+---
 Exercise:
     title: 'M04-ユニット 6 Azure portal を使用して Traffic Manager プロファイルを作成する'
     module: 'モジュール - Azure で 非 HTTP(S) トラフィックの負荷を分散する'
