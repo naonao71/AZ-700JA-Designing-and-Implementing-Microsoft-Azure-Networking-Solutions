@@ -83,7 +83,7 @@ ManufacturingVNet North Europe 10.30.0.0/16
 1. Azure portal のホーム ページで、「**リソースの作成**」を選択します。
 2. 「**検索サービスとマーケットプレイス**」に、仮想ネットワークを入力します。  
    ‎![Azure portal のリソースの作成ページ。検索サービスとマーケットプレイスボックスが強調表示されています。](../media/create-resource-search-virtual-network-annotated.png)
-3. マーケットプレイスの仮想ネットワークで、**「作成」 &gt; 「仮想ネットワーク」**を選択します。  
+3. マーケットプレイスの仮想ネットワークで、**「作成」 &gt; 「仮想ネットワーク」** を選択します。  
    ‎![「仮想ネットワークの作成」が強調表示された「仮想ネットワーク」タイル。](../media/virtual-network-service-annotated.png)
 4. 次の表の情報を使用して、CoreServicesVnet 仮想ネットワークを作成します。  
    ‎![Azure 仮想ネットワーク デプロイの既定の IP アドレス空間の IP アドレス構成を削除または上書きします ](../media/default-vnet-ip-address-range-annotated.png)

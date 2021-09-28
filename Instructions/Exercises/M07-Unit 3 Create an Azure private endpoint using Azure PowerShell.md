@@ -18,7 +18,7 @@ Azure Web アプリのプライベート エンドポイントを作成し、仮
 
 - 対象の Azure サブスクリプションにデプロイされている PremiumV2 レベル以上のアプリ サービス プランを持つ Azure Web アプリ。
 
-1. Azure portal の**「Cloud Shell」**ウィンドウで**「PowerShell」**セッションを開きます。
+1. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
 
 2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次のファイル template.json および parameters.json を CloudShell ホーム ディレクトリにアップロードします。
 
@@ -70,15 +70,15 @@ bastion ホストは、プライベート エンドポイントをテストす�
  
 
 ```Azure PowerShell
-## バックエンド サブネット構成を作成します。 ##
+## Create backend subnet config. ##
 
 $subnetConfig = New-AzVirtualNetworkSubnetConfig -Name myBackendSubnet -AddressPrefix 10.0.0.0/24```
 
-## Azure Bastion サブネットを作成します。##
+## Create Azure Bastion subnet. ##
 
 $bastsubnetConfig = New-AzVirtualNetworkSubnetConfig -Name AzureBastionSubnet -AddressPrefix 10.0.1.0/24
 
-## 仮想ネットワークを作成します。##
+## Create the virtual network. ##
 
 $parameters1 = @{
 
@@ -96,7 +96,7 @@ $parameters1 = @{
 
 $vnet = New-AzVirtualNetwork @parameters1
 
-## Bastion ホストのパブリック IP アドレスを作成します。##
+## Create public IP address for bastion host. ##
 
 $parameters2 = @{
 
@@ -114,7 +114,7 @@ $parameters2 = @{
 
 $publicip = New-AzPublicIpAddress @parameters2
 
-## Bastion ホストを作成する ##
+## Create bastion host ##
 
 $parameters3 = @{
 
@@ -155,15 +155,15 @@ New-AzBastion @parameters3
 - Add-AzVMNetworkInterface
 
 ``` Azure PowerShell
-## サーバー管理者の資格情報とパスワードを設定します。##
+## Set credentials for server admin and password. ##
 
 $cred = Get-Credential
 
-## 仮想ネットワーク構成を取得するコマンド。##
+## Command to get virtual network configuration. ##
 
 $vnet = Get-AzVirtualNetwork -Name myVNet -ResourceGroupName CreatePrivateEndpointQS-rg
 
-## VM のネットワークインターフェイスを作成するコマンド ##
+## Command to create network interface for VM ##
 
 $parameters1 = @{
 
@@ -179,7 +179,7 @@ $parameters1 = @{
 
 $nicVM = New-AzNetworkInterface @parameters1
 
-## 仮想マシンの構成を作成します。##
+## Create a virtual machine configuration.##
 
 $parameters2 = @{
 
@@ -213,7 +213,7 @@ $vmConfig =
 
 New-AzVMConfig @parameters2 | Set-AzVMOperatingSystem -Windows @parameters3 | Set-AzVMSourceImage @parameters4 | Add-AzVMNetworkInterface -Id $nicVM.Id
 
-## 仮想マシンを作成します ##
+## Create the virtual machine ##
 
 New-AzVM -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Location 'eastus' -VM $vmConfig 
 
@@ -240,13 +240,13 @@ Azure でのアウトバウンド接続の詳細については、アウトバ�
  
 
 ```Azure PowerShell
-## Web アプリを変数に配置します。<webapp-resource-group-name> を Web アプリのリソース グループに置き換えます。##
+## Place web app into variable. Replace <webapp-resource-group-name> with the resource group of your webapp. ##
 
-## <your-webapp-name> を Web アプリ名に置き換えます ##
+## Replace <your-webapp-name> with your webapp name ##
 
 $webapp = Get-AzWebApp -ResourceGroupName <webapp-resource-group-name> -Name <your-webapp-name>
 
-## プライベート エンドポイント接続を作成します。##
+## Create Private Endpoint connection. ##
 
 $parameters1 = @{
 
@@ -260,17 +260,17 @@ $parameters1 = @{
 
 $privateEndpointConnection = New-AzPrivateLinkServiceConnection @parameters1
 
-## 仮想ネットワークを変数に配置します。##
+## Place virtual network into variable. ##
 
 $vnet = Get-AzVirtualNetwork -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Name 'myVNet'
 
-## プライベート エンドポイント ネットワーク ポリシーを無効にする ##
+## Disable private endpoint network policy ##
 
 $vnet.Subnets[0].PrivateEndpointNetworkPolicies = "Disabled"
 
 $vnet | Set-AzVirtualNetwork
 
-## プライベート エンドポイントの作成
+## Create private endpoint
 
 $parameters2 = @{
 
@@ -305,11 +305,11 @@ New-AzPrivateEndpoint @parameters2
 - New-AzPrivateDnsZoneGroup
 
 ```Azure PowerShell
-## 仮想ネットワークを変数に配置します。##
+## Place virtual network into variable. ##
 
 $vnet = Get-AzVirtualNetwork -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Name 'myVNet'
 
-## プライベート DNS ゾーンを作成します。##
+## Create private dns zone. ##
 
 $parameters1 = @{
 
@@ -321,7 +321,7 @@ $parameters1 = @{
 
 $zone = New-AzPrivateDnsZone @parameters1
 
-## DNS ネットワーク リンクを作成します。##
+## Create dns network link. ##
 
 $parameters2 = @{
 
@@ -337,7 +337,7 @@ $parameters2 = @{
 
 $link = New-AzPrivateDnsVirtualNetworkLink @parameters2
 
-## DNS 構成を作成する ##
+## Create DNS configuration ##
 
 $parameters3 = @{
 
@@ -349,7 +349,7 @@ $parameters3 = @{
 
 $config = New-AzPrivateDnsZoneConfig @parameters3
 
-## DNS ゾーン グループを作成します。##
+## Create DNS zone group. ##
 
 $parameters4 = @{
 
@@ -390,18 +390,18 @@ New-AzPrivateDnsZoneGroup @parameters4
 - nslookup <your- webapp-name>.azurewebsites.net と入力します。<your-webapp-name> を、前の手順で作成した Web アプリの名前に置き換えます。以下に表示されるようなメッセージが返されます。
 
   ```| Azure PowerShell |
-  サーバー: 不明
+  Server: UnKnown
   
   Address: 168.63.129.16
   
-  権限のない回答:
+  Non-authoritative answer:
   
-  名前: mywebapp8675.privatelink.azurewebsites.net
+  Name: mywebapp8675.privatelink.azurewebsites.net
   
   Address: 10.0.0.5
   
   Aliases: mywebapp8675.azurewebsites.net  
-
+  ```
 
 Web アプリ名に対応する **10.0.0.5** というプライベート IP アドレスが返されます。このアドレスは、先ほど作成した仮想ネットワークのサブネット内に存在します。
 
