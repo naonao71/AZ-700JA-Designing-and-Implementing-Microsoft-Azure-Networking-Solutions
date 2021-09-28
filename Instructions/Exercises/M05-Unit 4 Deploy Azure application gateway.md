@@ -1,4 +1,4 @@
-﻿---
+---
 Exercise:
     title: 'M05-ユニット 4 Azure Application Gateway をデプロイする'
     module: 'モジュール - Azure で HTTP(S) トラフィックの負荷を分散する'

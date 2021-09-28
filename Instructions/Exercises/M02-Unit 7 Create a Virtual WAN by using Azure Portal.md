@@ -1,4 +1,4 @@
-﻿---
+---
 Exercise:
     title: 'M02-ユニット 7 Azure portal を使用して仮想 WAN を作成する'
     module: 'モジュール - ハイブリッド ネットワークの設計と実装'

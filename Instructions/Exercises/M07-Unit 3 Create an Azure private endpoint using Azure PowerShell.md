@@ -1,4 +1,4 @@
-﻿---
+---
 Exercise:
     title: 'M07-ユニット 3 Azure PowerShell を使用して Azure プライベート エンドポイントを作成する'
     module: 'モジュール - Azure サービスへのプライベート アクセスを設計および実装する'
