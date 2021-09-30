@@ -1,4 +1,4 @@
----
+﻿---
 Exercise:
     title: 'M05-ユニット 4 Azure Application Gateway をデプロイする'
     module: 'モジュール - Azure で HTTP(S) トラフィックの負荷を分散する'
@@ -91,7 +91,7 @@ Exercise:
 
 19. 「**リスナー**」タブの他の設定の既定値を受け入れます。
 
-    ![Azure portal は Application Gateway ルーティング規則を追加する](../media/routing-rule-listener-tab.png)
+    ![Azure portal は Application Gateway ルーティング規則を追加する](../media/Routing-rule-listener-tab.png)
 
 20. 「**バックエンド ターゲット**」タブを選択して、残りのルーティング規則を構成します。
 
