@@ -1,4 +1,4 @@
----
+﻿---
 Exercise:
     title: 'M07-ユニット 3 Azure PowerShell を使用して Azure プライベート エンドポイントを作成する'
     module: 'モジュール - Azure サービスへのプライベート アクセスを設計および実装する'
@@ -18,11 +18,13 @@ Azure Web アプリのプライベート エンドポイントを作成し、仮
 
 - 対象の Azure サブスクリプションにデプロイされている PremiumV2 レベル以上のアプリ サービス プランを持つ Azure Web アプリ。
 
-1. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
+1. M07 フォルダーで parameters.json を見つけて開きます。メモ帳で開き、"value": "GEN-UNIQUE" という行を見つけます。プレースホルダーの GEN-UNIQUE 文字列を Web アプリ名の一意の値に置き換えます。変更内容を保存します｡
 
-2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次のファイル template.json および parameters.json を CloudShell ホーム ディレクトリにアップロードします。
+2. Azure portal の**「Cloud Shell」**ウィンドウで **「PowerShell」** セッションを開きます。
 
-3. 次の ARM テンプレートをデプロイして、この演習に必要な PremiumV2 層の Azure Web アプリを作成します。
+3. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次のファイル template.json および parameters.json を CloudShell ホーム ディレクトリにアップロードします。
+
+4. 次の ARM テンプレートをデプロイして、この演習に必要な PremiumV2 層の Azure Web アプリを作成します。
 
    ```powershell
    $RGName = "CreatePrivateEndpointQS-rg"
