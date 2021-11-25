@@ -49,7 +49,7 @@ Exercise:
 |                 | 私はマルチテナント ホスト権限のある適格な Windows 10 ライセンスを持っていることを確認します。 | オン                              |
 | ディスク           | 変更は必要ありません                                          |                                       |
 | ネットワーキング      | 仮想ネットワーク                                              | ManufacturingVnet                     |
-|                 | サブネット                                                       | DatabaseSubnet (10.30.10.0/24)        |
+|                 | サブネット                                                       | ManufacturingSystemSubnet (10.30.10.0/24)|
 |                 | パブリック IP                                                    | (新しい) ManufacturingVM-ip              |
 |                 | NIC ネットワーク セキュリティ グループ                                   | Basic                                 |
 |                 | パブリック受信ポート                                         | 選択したポートを許可する                  |
