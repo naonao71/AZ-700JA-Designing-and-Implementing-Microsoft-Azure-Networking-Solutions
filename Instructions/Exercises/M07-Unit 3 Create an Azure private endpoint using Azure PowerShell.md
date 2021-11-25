@@ -20,7 +20,7 @@ Azure Web アプリのプライベート エンドポイントを作成し、仮
 
 1. M07 フォルダーで parameters.json を見つけて開きます。メモ帳で開き、"value": "GEN-UNIQUE" という行を見つけます。プレースホルダーの GEN-UNIQUE 文字列を Web アプリ名の一意の値に置き換えます。変更内容を保存します｡
 
-2. Azure portal の**「Cloud Shell」**ウィンドウで **「PowerShell」** セッションを開きます。
+2. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
 
 3. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次のファイル template.json および parameters.json を CloudShell ホーム ディレクトリにアップロードします。
 
