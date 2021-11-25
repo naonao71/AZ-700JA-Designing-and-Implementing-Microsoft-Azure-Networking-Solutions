@@ -1,4 +1,4 @@
-﻿---
+---
 Exercise:
     title: 'M06-ユニット 7 Azure portal を使用して Azure Firewall をデプロイして構成する'
     module: 'モジュール - ネットワーク セキュリティの設計と実装'
