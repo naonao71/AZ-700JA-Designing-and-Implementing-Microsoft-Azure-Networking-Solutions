@@ -1,4 +1,4 @@
----
+﻿---
 Exercise:
     title: 'M02-ユニット 7 Azure portal を使用して仮想 WAN を作成する'
     module: 'モジュール - ハイブリッド ネットワークの設計と実装'
@@ -108,7 +108,7 @@ Exercise:
 1. 次のコマンドを実行して、このモジュールのラボ全体で作成したすべてのリソース グループのリストを削除します。
 
    ```powershell
-   Remove-AzResourceGroup -Name 'NAME OF THE RG' -Force -AsJob
+   Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
    ```
 
     > **注**: コマンドは非同期で実行されるので (-AsJob パラメーターによって決定されます)、別の PowerShell コマンドを同一 PowerShell セッション内ですぐに実行できますが、リソース グループが実際に削除されるまでに数分かかります。

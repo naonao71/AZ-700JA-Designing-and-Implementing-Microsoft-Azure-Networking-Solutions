@@ -1,4 +1,4 @@
----
+﻿---
 Exercise:
     title: 'M03-ユニット 5 ExpressRoute 回線のプロビジョニング'
     module: 'モジュール - Azure ExpressRoute の設計と実装'
@@ -34,9 +34,7 @@ ExpressRoute 回線を作成する方法のデモを見るには、[Azure Expres
 
    ![Azure portal - ExpressRoute 回線の作成メニュー](../media/create-expressroute-circuit-menu.png)
 
-3. 「**ExpressRoute の作成**」ページで、回線の**リソース グループ**、**リージョン**、**名前**を次のように指定します。ExpressRouteResourceGroup、West US 2、TestERCircuit。次に、「**次: 構成 &gt;**」を選択します。
-
-   ![Azure portal - ExpressRoute 基本タブを作成する](../media/expressroute-create-basic.png)
+3. 「**ExpressRoute の作成**」ページで、回線の**リソース グループ**、**リージョン**、**名前**を次のように指定します。ExpressRouteResourceGroup、East US 2、TestERCircuit。次に、「**次: 構成 &gt;**」を選択します。
 
 4. このページで値を入力するときは、正しい SKU レベル (Local、Standard、または Premium) とデータ計測課金モデル (無制限または従量制) を必ず指定してください。
 
@@ -97,14 +95,12 @@ ExpressRoute 回線を作成する方法のデモを見るには、[Azure Expres
    - ExpressRoute 回線を使用するには、次の状態になっている必要があります。
      - プロバイダーの状態: Provisioned
      - 回線の状態: Enabled
-   - プロビジョニングの状態と回線キーの状態を定期的に確認する必要があります。
-
-6. 関心のある回線を選択し、その回線のプロパティを表示できます。「**プロバイダーの状態**」が「**プロビジョニング済み**」になっていることを確認してから続行します。
+   - プロビジョニングの状態と回線ステータスの状態を定期的に確認する必要があります。
 
 ![Azure portal - 状態がプロビジョニング済みであることを示す ExpressRoute 回線のプロパティ](../media/provisioned.png)
 
  
-1. ExpressRoute 回線を作成およびプロビジョニングする方法のこのデモをご覧ください。[Azure ExpressRoute - ExpressRoute 回線の作成方法 | Azure | Channel 9 (msdn.com)](https://channel9.msdn.com/Blogs/Azure/Azure-ExpressRoute-How-to-create-an-ExpressRoute-circuit?term=ExpressRoute&lang-en=true&pageSize=15&skip=15)。 
+ExpressRoute 回線を作成およびプロビジョニングする方法のこのデモをご覧ください。[Azure ExpressRoute - ExpressRoute 回線の作成方法 | Azure | Channel 9 (msdn.com)](https://channel9.msdn.com/Blogs/Azure/Azure-ExpressRoute-How-to-create-an-ExpressRoute-circuit?term=ExpressRoute&lang-en=true&pageSize=15&skip=15)。 
 
 お疲れさまでした! ExpressRoute 回線を作成し、回線のプロビジョニングを完了するために必要なサービス キーを見つけました。
 
@@ -132,7 +128,8 @@ ExpressRoute 回線サービス プロバイダーのプロビジョニング状
 1. 次のコマンドを実行して、このモジュールのラボ全体で作成したすべてのリソース グループのリストを削除します。
 
    ```powershell
-   Remove-AzResourceGroup -Name 'NAME OF THE RG' -Force -AsJob
+   Remove-AzResourceGroup -Name 'ContosoResourceGroup' -Force -AsJob
+   Remove-AzResourceGroup -Name 'ExpressRouteResourceGroup' -Force -AsJob
    ```
    > **注**: コマンドは非同期で実行されるので (-AsJob パラメーターによって決定されます)、別の PowerShell コマンドを同一 PowerShell セッション内ですぐに実行できますが、リソース グループが実際に削除されるまでに数分かかります。
 

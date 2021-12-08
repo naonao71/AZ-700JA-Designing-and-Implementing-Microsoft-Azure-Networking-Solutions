@@ -1,4 +1,4 @@
----
+﻿---
 Exercise:
     title: 'M05-ユニット 4 Azure Application Gateway をデプロイする'
     module: 'モジュール - Azure で HTTP(S) トラフィックの負荷を分散する'
@@ -37,7 +37,7 @@ Exercise:
    | サブスクリプション        | サブスクリプションを選択します。                    |
    | リソース グループ      | 「新しい ContosoResourceGroup　の作成」を選択する       |
    | Application Gateway | ContosoAppGateway                            |
-   | リージョン              | 「**米国西部**」を選択する                           |
+   | リージョン              | **米国東部** を選択する                           |
    | 仮想ネットワーク     | **Create new**をクリックする                        |
 
 5. 「仮想ネットワークの作成」で、次の情報を入力または選択します。
@@ -147,7 +147,7 @@ Azure が Application Gateway を作成するのに数分かかる場合があ�
    | サブスクリプション         | サブスクリプションを選択します。                        |
    | リソース グループ       | ContosoResourceGroup を選択する                      |
    | 仮想マシン名 | BackendVM1                                       |
-   | イメージ                | 「**Windows Server 2016 Datacenter - Gen1**」を選択する |
+   | イメージ                | 「**Windows Server 2022 Datacenter - Gen1**」を選択する  |
    | ユーザー名             | TestUser                                         |
    | パスワード             | TestPa$$w0rd                                     |
    | パブリック受信ポート | なし                                             |
@@ -192,7 +192,7 @@ Set-AzVMExtension `
 
  -SettingString '{"commandToExecute":"powershell Add-WindowsFeature Web-Server; powershell Add-Content -Path \"C:\\inetpub\\wwwroot\\Default.htm\" -Value $($env:computername)"}' `
 
- -Location WestUS
+ -Location EastUS
 ```
 
 4. 2 番目の仮想マシンを作成し、「仮想マシンの作成と IIS のインストール」を使用して　IIS　をインストールし、以前に完了した手順をテストします。仮想マシン名および **Set-AzVMExtension** コマンドレットの **VMName** 設定には BackendVM2 を使用します。 

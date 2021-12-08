@@ -1,4 +1,4 @@
----
+﻿---
 Exercise:
     title: 'M02-ユニット 3 仮想ネットワーク ゲートウェイを作成および構成する'
     module: 'モジュール - ハイブリッド ネットワークの設計と実装'
@@ -27,47 +27,41 @@ Exercise:
 
 1. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
 
-2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次のファイル azuredeploy.json および azuredeploy.parameters.json を CloudShell ホーム ディレクトリにアップロードします。
+2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次のファイル **azuredeploy.json** および **azuredeploy.parameters.json** を CloudShell ホーム ディレクトリにアップロードします。
 
 3. 次の ARM テンプレートをデプロイして、この演習に必要な仮想ネットワークとサブネットを作成します。
 
    ```powershell
    $RGName = "ContosoResourceGroup"
    #create resource group if it doesnt exist
-   New-AzResourceGroup -Name $RGName -Location West US
+   New-AzResourceGroup -Name $RGName -Location East US
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.json
    ```
 
 ## タスク 2: CoreServicesTestVM を作成する
 
-1. Azure ホーム ページで、「**仮想マシン**」を選択します。
+1. Azure portal の「ホーム」ページで、グローバル検索を使用して、「**Virtual Networks**」と入力し、サービスの下で、仮想ネットワークを選択します。
 
-2. 仮想マシンで、**「+ 追加」** > **「+ 事前設定された構成で開始」** を選択します。
-   ![「+ 追加」と「+ 事前設定された構成で開始」が強調表示された仮想マシン。](../media/add-virtual-machine-preset.png)
+2. 仮想マシンで、**「+ 作成」、「+ 仮想マシン」**を選択します。
 
-3. 「ワークロードに一致する推奨の既定値の選択」の「**ワークロード環境の選択**」で、「**開発/テスト**」を選択します。
-
-4. 「**ワークロードの種類の選択**」で、「**汎用 (D シリーズ)**」を選択してから、「**続行**」を選択して VM を作成します。
-
-5. 次の表の情報を使用して、VM を作成します。
+3. 次の表の情報を使用して、VM を作成します。
 
    | **タブ**         | **オプション**                                                   | **値**                             |
    | --------------- | ------------------------------------------------------------ | ------------------------------------- |
    | 基本          | リソース グループ                                               | ContosoResourceGroup                  |
    |                 | 仮想マシン名                                         | CoreServicesTestVM                    |
-   |                 | リージョン                                                       | (US) 米国西部                          |
+   |                 | リージョン                                                       | 米国東部                               |
    |                 | 可用性オプション                                         | インフラストラクチャの冗長性は必要ありません |
-   |                 | イメージ                                                        | Windows 10 Pro, Version 20H2 - Gen 1  |
+   |                 | イメージ                                                        | Windows Server 2022 Datacenter- Gen1  |
    |                 | Azure Spot インスタンス                                          | 非選択                          |
-   |                 | サイズ                                                         | Standard_D2_v3 - 2vcpus、8GiB メモリ  |
+   |                 | サイズ                                                         | Standard_D2s_v3 - 2vcpus、8GiB メモリ |
    |                 | ユーザー名                                                     | TestUser                              |
    |                 | パスワード                                                     | TestPa$$w0rd!                         |
    |                 | パブリック受信ポート                                         | 選択したポートを許可する                  |
    |                 | 受信ポートの選択                                         | RDP (3389)                            |
-   |                 | 私はマルチテナント ホスト権限のある適格な Windows 10 ライセンスを持っていることを確認します。 | オン                              |
    | ディスク           | 変更は必要ありません                                          |                                       |
    | ネットワーキング      | 仮想ネットワーク                                              | CoreServicesVnet                      |
-   |                 | サブネット                                                       | DatabaseSubnet (10.20.0.0/24)         |
+   |                 | サブネット                                                       | DatabaseSubnet (10.20.20.0/24)        |
    |                 | パブリック IP                                                    | (新しい) CoreServicesTestVM-ip           |
    |                 | NIC ネットワーク セキュリティ グループ                                   | Basic                                 |
    |                 | パブリック受信ポート                                         | 選択したポートを許可する                  |
@@ -78,35 +72,29 @@ Exercise:
    | タグ            | 変更は必要ありません                                          |                                       |
    | Review + create | 設定を確認し、「作成」を選択します                       |                                       |
 
-6. デプロイが完了したら、**「リソースに移動」** を選択します。
+4. デプロイが完了したら、**[リソースに移動]** を選択します。
 
 ## タスク 3: ManufacturingTestVM を作成する
 
-1. Azure ホーム ページで、「**仮想マシン**」を選択します。
+1. Azure portal の「ホーム」ページで、グローバル検索を使用して、「**Virtual Networks**」と入力し、サービスの下で、仮想ネットワークを選択します。
 
-2. 仮想マシンで、**「+ 追加」** > **「+ 事前設定された構成で開始」** を選択します。
-   ![「+ 追加」と「+ 事前設定された構成で開始」が強調表示された仮想マシン。](../media/add-virtual-machine-preset.png)
+2. 仮想マシンで、**「+ 作成」、「+ 仮想マシン」**を選択します。
 
-3. 「ワークロードに一致する推奨の既定値の選択」の「**ワークロード環境の選択**」で、「**開発/テスト**」を選択します。
-
-4. 「**ワークロードの種類の選択**」で、「**汎用 (D シリーズ)**」を選択してから、「**続行**」を選択して VM を作成します。
-
-5. 次の表の情報を使用して、VM を作成します。
+3. 次の表の情報を使用して、VM を作成します。
 
    | **タブ**         | **オプション**                                                   | **値**                                 |
    | --------------- | ------------------------------------------------------------ | ----------------------------------------- |
    | 基本          | リソース グループ                                               | ContosoResourceGroup                      |
    |                 | 仮想マシン名                                         | ManufacturingTestVM                       |
-   |                 | リージョン                                                       | (ヨーロッパ) 北ヨーロッパ                     |
+   |                 | リージョン                                                       | 西ヨーロッパ                               |
    |                 | 可用性オプション                                         | インフラストラクチャの冗長性は必要ありません     |
-   |                 | イメージ                                                        | Windows 10 Pro, Version 20H2 - Gen 1      |
+   |                 | イメージ                                                        | Windows Server 2022 Datacenter- Gen1      |
    |                 | Azure Spot インスタンス                                          | 非選択                              |
-   |                 | サイズ                                                         | Standard_D2_v3 - 2vcpus、8GiB メモリ      |
+   |                 | サイズ                                                         | Standard_D2s_v3 - 2vcpus、8GiB メモリ     |
    |                 | ユーザー名                                                     | TestUser                                  |
    |                 | パスワード                                                     | TestPa$$w0rd!                             |
    |                 | パブリック受信ポート                                         | 選択したポートを許可する                      |
    |                 | 受信ポートの選択                                         | RDP (3389)                                |
-   |                 | 私はマルチテナント ホスト権限のある適格な Windows 10 ライセンスを持っていることを確認します。 | オン                                  |
    | ディスク           | 変更は必要ありません                                          |                                           |
    | ネットワーキング      | 仮想ネットワーク                                              | ManufacturingVnet                         |
    |                 | サブネット                                                       | ManufacturingSystemSubnet (10.40.40.0/24) |
@@ -120,7 +108,7 @@ Exercise:
    | タグ            | 変更は必要ありません                                          |                                           |
    | Review + create | 設定を確認し、「**作成**」を選択します                   |                                           |
 
-6. デプロイが完了したら、**[リソースに移動]** を選択します。
+4. デプロイが完了したら、**[リソースに移動]** を選択します。
 
 ## タスク 4: RDP を使用してテスト VM に接続する
 
@@ -129,13 +117,13 @@ Exercise:
 3. 「**ManufacturingTestVM**」で、**「接続」 &gt; 「RDP」** を選択します。
 4. 「**ManufacturingTestVM**」の **|** 「**接続**」で、「**RDP ファイルのダウンロード**」を選択します。
 5. RDP ファイルをデスクトップに保存します。
-6. RDP ファイル、VM の作成時に指定したユーザー名とパスワードを使用して ManufacturingTestVM に接続します。
+6. RDP ファイル、ユーザー名 **TestUser**、パスワード **TestPa$w0rd!** を使用して、ManufacturingTestVM に接続します。
 7. Azure portal のホーム ページで、「**仮想マシン**」を選択します。
 8. 「**CoreServicesTestVM**」を選択します。
 9. 「**CoreServicesTestVM**」で、**「接続」 &gt; 「RDP」** を選択します。
 10. 「**CoreServicesTestVM**」の **|** 「**接続**」で、「**RDP ファイルのダウンロード**」を選択します。
 11. RDP ファイルをデスクトップに保存します。
-12. RDP ファイル、VM の作成時に指定したユーザー名とパスワードを使用して CoreServicesTestVM に接続します。
+12. RDP ファイル、ユーザー名 **TestUser**、パスワード **TestPa$w0rd!** を使用して、CoreServicesTestVM に接続します。
 13. 両方の VM で、「**デバイスのプライバシー設定の選択**」で「**同意**」を選択します。
 14. 両方の VM の「**ネットワーク**」で、「**はい**」を選択します。
 15. CoreServicesTestVM で、PowerShell プロンプトを開き、次のコマンド: ipconfig を実行します
@@ -173,7 +161,7 @@ Exercise:
    | 基本          | プロジェクトの詳細   | サブスクリプション                                | 変更は必要ありません          |
    |                 |                   | リソース グループ                               | ContosoResourceGroup         |
    |                 | インスタンスの詳細  | 名前                                        | CoreServicesVnetGateway      |
-   |                 |                   | リージョン                                      | 米国西部                      |
+   |                 |                   | リージョン                                      | 米国東部                      |
    |                 |                   | ゲートウェイの種類                                | VPN                          |
    |                 |                   | VPN の種類                                    | ルート ベース                  |
    |                 |                   | SKU                                         | VpnGw1                       |
@@ -204,7 +192,7 @@ Exercise:
    | 基本          | プロジェクトの詳細   | サブスクリプション                                | 変更は必要ありません          |
    |                 |                   | リソース グループ                               | ContosoResourceGroup         |
    |                 | インスタンスの詳細  | 名前                                        | ManufacturingVnetGateway     |
-   |                 |                   | リージョン                                      | 北ヨーロッパ                 |
+   |                 |                   | リージョン                                      | 西ヨーロッパ                  |
    |                 |                   | ゲートウェイの種類                                | VPN                          |
    |                 |                   | VPN の種類                                    | ルート ベース                  |
    |                 |                   | SKU                                         | VpnGw1                       |
@@ -250,9 +238,9 @@ Exercise:
    | IKE プロトコル                   | IKEv2                             |
    | サブスクリプション                   | 変更は必要ありません               |
    | リソース グループ                 | 変更は必要ありません               |
-   | 場所                       | 米国西部                           |
+   | 場所                       | 米国東部                           |
 
-5. 接続を作成するには、「**作成**」を選択します。
+5. 接続を作成するには、「**OK**」を選択します。
    
 
 ## タスク 9: ManufacturingVnet を CoreServicesVnet に接続する
@@ -277,10 +265,9 @@ Exercise:
    | IKE プロトコル                   | IKEv2                             |
    | サブスクリプション                   | 変更は必要ありません               |
    | リソース グループ                 | 変更は必要ありません               |
-   | 場所                       | 北ヨーロッパ                      |
-   |                                |                                   |
+   | 場所                       | 西ヨーロッパ                       |
 
-5. 接続を作成するには、「**作成**」を選択します。
+5. 接続を作成するには、「**OK**」を選択します。
 
 ## タスク 10: 接続が接続されていることを確認する 
 
