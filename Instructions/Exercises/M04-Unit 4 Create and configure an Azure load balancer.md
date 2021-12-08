@@ -1,4 +1,4 @@
-﻿---
+---
 Exercise:
     title: 'M04-ユニット 4 Azure のロード バランサーを作成し、構成する'
     module: 'モジュール ? Azure での非 HTTP(S) トラフィックの負荷分散'
