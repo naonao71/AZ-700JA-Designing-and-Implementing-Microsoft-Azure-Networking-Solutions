@@ -1,4 +1,4 @@
-﻿---
+---
 Exercise:
     title: 'M01-ユニット 6 Azure で DNS 設定を構成する'
     module: 'モジュール - Azure 仮想ネットワークの概要'
