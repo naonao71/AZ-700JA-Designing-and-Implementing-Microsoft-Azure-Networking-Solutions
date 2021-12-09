@@ -12,17 +12,17 @@ Exercise:
 
 インフラストラクチャとアプリケーションを Azure に移行している架空の組織 Contoso Ltd, について考えてみます。ネットワーク エンジニアとしての役割では、3 つの仮想ネットワークとサブネットを計画および実装して、それらの仮想ネットワークのリソースをサポートする必要があります。
 
-**CoreServicesVnet** 仮想ネットワークは、**米国西部**リージョンにデプロイします。この仮想ネットワークには、最も多くのリソースを配置します。VPN 接続を介してオンプレミス ネットワークに接続されます。このネットワークには、ビジネスの運営にとって重要な Web サービス、データベース、その他のシステムを配置します。ドメイン コントローラーや DNS などの共有サービスもここに配置されます。大きく成長することが見込まれるため、この仮想ネットワークには大きなアドレス空間が必要です。
+**CoreServicesVnet** 仮想ネットワークは、**米国東部**リージョンにデプロイします。この仮想ネットワークには、最も多くのリソースを配置します。VPN 接続を介してオンプレミス ネットワークに接続されます。このネットワークには、ビジネスの運営にとって重要な Web サービス、データベース、その他のシステムを配置します。ドメイン コントローラーや DNS などの共有サービスもここに配置されます。大きく成長することが見込まれるため、この仮想ネットワークには大きなアドレス空間が必要です。
 
-**ManufacturingVnet** 仮想ネットワークは、組織の製造施設がある場所に近い**北ヨーロッパ** リージョンにデプロイされます。この仮想ネットワークには、製造施設の運用に使用するシステムが含まれます。組織では、システムでの温度などのデータの取得元として、多数の内部接続デバイスを予想しており、拡張できる IP アドレス空間が必要になります。
+**ManufacturingVnet** 仮想ネットワークは、組織の製造施設がある場所に近い**西ヨーロッパ** リージョンにデプロイされます。この仮想ネットワークには、製造施設の運用に使用するシステムが含まれます。組織では、システムでの温度などのデータの取得元として、多数の内部接続デバイスを予想しており、拡張できる IP アドレス空間が必要になります。
 
-**ResearchVnet** 仮想ネットワークは、組織の研究開発チームがある場所に近い**インド西部**リージョンにデプロイされます。研究開発チームは、この仮想ネットワークを使用します。チームのリソースのセットは小規模で安定しており、拡大することはないと予想されます。チームには、作業のための少数の仮想マシン用に少数の IP アドレスが必要です。
+**ResearchVnet** 仮想ネットワークは、組織の研究開発チームがある場所に近い**アジア西部**リージョンにデプロイされます。研究開発チームは、この仮想ネットワークを使用します。チームのリソースのセットは小規模で安定しており、拡大することはないと予想されます。チームには、作業のための少数の仮想マシン用に少数の IP アドレスが必要です。
 
 ![Network layout for Contoso. 
 On-premises 10.10.0.0/16
-ResearchVNet West India 10.40.40.0/24
-CoreServicesVNet West US 10.20.0.0/16
-ManufacturingVNet North Europe 10.30.0.0/16
+ResearchVNet Southeast Asia 10.40.40.0/24
+CoreServicesVNet East US 10.20.0.0/16
+ManufacturingVNet West Europe 10.30.0.0/16
 ](../media/design-implement-vnet-peering.png)
 
 
@@ -31,17 +31,17 @@ ManufacturingVNet North Europe 10.30.0.0/16
 
 | **仮想ネットワーク** | **リージョン**   | **仮想ネットワークのアドレス空間** | **サブネット**                | **サブネット**    |
 | ------------------- | ------------ | --------------------------------- | ------------------------- | ------------- |
-| CoreServicesVnet    | 米国西部      | 10.20.0.0/16                      |                           |               |
+| CoreServicesVnet    | 米国東部      | 10.20.0.0/16                      |                           |               |
 |                     |              |                                   | GatewaySubnet             | 10.20.0.0/27  |
 |                     |              |                                   | SharedServicesSubnet      | 10.20.10.0/24 |
 |                     |              |                                   | DatabaseSubnet            | 10.20.20.0/24 |
 |                     |              |                                   | PublicWebServiceSubnet    | 10.20.30.0/24 |
-| ManufacturingVnet   | 北ヨーロッパ | 10.30.0.0/16                      |                           |               |
+| ManufacturingVnet   | 西ヨーロッパ  | 10.30.0.0/16                      |                           |               |
 |                     |              |                                   | ManufacturingSystemSubnet | 10.30.10.0/24 |
 |                     |              |                                   | SensorSubnet1             | 10.30.20.0/24 |
 |                     |              |                                   | SensorSubnet2             | 10.30.21.0/24 |
 |                     |              |                                   | SensorSubnet3             | 10.30.22.0/24 |
-| ResearchVnet        | インド西部   | 10.40.0.0/16                      |                           |               |
+| ResearchVnet        |東南アジア| 10.40.0.0/16                      |                           |               |
 |                     |              |                                   | ResearchSystemSubnet      | 10.40.0.0/24  |
 
 
@@ -57,10 +57,9 @@ ManufacturingVNet North Europe 10.30.0.0/16
 
 ## タスク 1: Contoso リソース グループを作成する
 
-1. [Azure Portal](https://portal.azure.com/) に移動します。
+1. [Azure portal](https://portal.azure.com/) に移動します。
 
 2. ホーム ページの「**Azure サービス**」で、「**リソース グループ**」を選択します。  
-   ‎![リソース グループが強調表示された Azure portal のホーム ページ。](../media/azure-portal-home-page-annotated.png)
 
 3. 「リソース」グループで、「**+ 作成**」を選択します。
 
@@ -69,7 +68,7 @@ ManufacturingVNet North Europe 10.30.0.0/16
 | **タブ**         | **オプション**                                 | **値**            |
 | --------------- | ------------------------------------------ | -------------------- |
 | 基本          | リソース グループ                             | ContosoResourceGroup |
-|                 | リージョン                                     | (US) 米国西部         |
+|                 | リージョン                                     | (米国) 米国東部         |
 | タグ            | 変更は必要ありません                        |                      |
 | Review + create | 設定を確認し、「**作成**」を選択します |                      |
 
@@ -80,12 +79,9 @@ ManufacturingVNet North Europe 10.30.0.0/16
 
 ## タスク 2: CoreServicesVnet 仮想ネットワークとサブネットを作成する
 
-1. Azure portal のホーム ページで、「**リソースの作成**」を選択します。
-2. 「**検索サービスとマーケットプレイス**」に、仮想ネットワークを入力します。  
-   ‎![Azure portal のリソースの作成ページ。検索サービスとマーケットプレイスボックスが強調表示されています。](../media/create-resource-search-virtual-network-annotated.png)
-3. マーケットプレイスの仮想ネットワークで、**「作成」 &gt; 「仮想ネットワーク」** を選択します。  
-   ‎![「仮想ネットワークの作成」が強調表示された「仮想ネットワーク」タイル。](../media/virtual-network-service-annotated.png)
-4. 次の表の情報を使用して、CoreServicesVnet 仮想ネットワークを作成します。  
+1. Azure portal の「ホーム」ページで、「グローバル検索」バーに移動して、「**Virtual Networks**」を検索し、サービスの下で、仮想ネットワークを選択します。  ![Azure portal の「ホーム」ページの「グローバル検索」バーで、仮想ネットワークを検索した結果。](../media/global-search-bar.PNG)
+2. 「Virtual Network」ページで、「**作成**」を選択します。  ![仮想ネットワークの作成ウィザード。](../media/create-virtual-network.png)
+3. 次の表の情報を使用して、CoreServicesVnet 仮想ネットワークを作成します。  
    ‎![Azure 仮想ネットワーク デプロイの既定の IP アドレス空間の IP アドレス構成を削除または上書きします ](../media/default-vnet-ip-address-range-annotated.png)
 
  
@@ -94,12 +90,12 @@ ManufacturingVNet North Europe 10.30.0.0/16
 | ------------ | ------------------ | -------------------- |
 | 基本       | リソース グループ     | ContosoResourceGroup |
 |              | 名前               | CoreServicesVnet     |
-|              | リージョン             | (US) 米国西部         |
+|              | リージョン             | (米国) 米国東部         |
 | IP アドレス | IPv4 アドレス空間 | 10.20.0.0/16         |
 
- 5. 次の表の情報を使用して、CoreServicesVnet サブネットを作成します。
+ 4. 次の表の情報を使用して、CoreServicesVnet サブネットを作成します。
 
- 6. 各サブネットの作成を開始するには、「**+ サブネットの追加**」を選択します。各サブネットの作成を終了するには、「**追加**」を選択します。
+ 5. 各サブネットの作成を開始するには、「**+ サブネットの追加**」を選択します。各サブネットの作成を終了するには、「**追加**」を選択します。
 
 | **サブネット**             | **オプション**           | **値**              |
 | ---------------------- | -------------------- | ---------------------- |
@@ -112,11 +108,11 @@ ManufacturingVNet North Europe 10.30.0.0/16
 | PublicWebServiceSubnet | サブネット名          | PublicWebServiceSubnet |
 |                        | サブネット アドレス範囲 | 10.20.30.0/24          |
 
- 7. CoreServicesVnet とそれに関連するサブネットの作成を完了するには、「**Review + create**」を選択します。
+ 6. CoreServicesVnet とそれに関連するサブネットの作成を完了するには、「**Review + create**」を選択します。
 
- 8. 構成が検証に合格したことを確認してから、「**作成**」を選択します。
+ 7. 構成が検証に合格したことを確認してから、「**作成**」を選択します。
  
- 9. 以下の表に基づいて、VNet ごとに手順 1 〜 8 を繰り返します  
+ 8. 以下の表に基づいて、VNet ごとに手順 1 〜 8 を繰り返します  
 
 ## タスク 3: ManufacturingVnet 仮想ネットワークとサブネットを作成する
 
@@ -125,7 +121,7 @@ ManufacturingVNet North Europe 10.30.0.0/16
 | ------------ | ------------------ | --------------------- |
 | 基本       | リソース グループ     | ContosoResourceGroup  |
 |              | 名前               | ManufacturingVnet     |
-|              | リージョン             | (ヨーロッパ) 北ヨーロッパ |
+|              | リージョン             | (ヨーロッパ) 西ヨーロッパ  |
 | IP アドレス | IPv4 アドレス空間 | 10.30.0.0/16          |
 
 
@@ -149,7 +145,7 @@ ManufacturingVNet North Europe 10.30.0.0/16
 | ------------ | ------------------ | -------------------- |
 | 基本       | リソース グループ     | ContosoResourceGroup |
 |              | 名前               | ResearchVnet         |
-|              | リージョン             | インド西部           |
+|              | リージョン             | 東南アジア       |
 | IP アドレス | IPv4 アドレス空間 | 10.40.0.0/16         |
 
 | **サブネット**           | **オプション**           | **値**            |
@@ -162,11 +158,7 @@ ManufacturingVNet North Europe 10.30.0.0/16
 
 1. Azure portal のホーム ページで、「**すべてのリソース**」を選択します。
 
-   ![すべてのリソースが強調表示された Azure portal のホーム ページ。](../media/azure-portal-home-page-all-resources-annotated.png)
-
-2. CoreServicesVnet、ManufacturingVnet、ResearchVnet がリストされていることを確認します。リストは次のようになります。
-
-   ![CoreServicesVnet、ManufacturingVnet、ResearchVnet が強調表示されたすべてのリソース リスト。](../media/all-resources-list-annotated.png)
+2. CoreServicesVnet、ManufacturingVnet、ResearchVnet がリストされていることを確認します。
 
 3. Azure は、使用するリージョンごとに Network Watchers を作成することに注意してください。
 

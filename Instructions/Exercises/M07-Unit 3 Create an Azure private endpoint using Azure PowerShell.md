@@ -24,13 +24,7 @@ Azure Web アプリのプライベート エンドポイントを作成し、仮
 
 3. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次のファイル template.json および parameters.json を CloudShell ホーム ディレクトリにアップロードします。
 
-4. 次の ARM テンプレートをデプロイして、この演習に必要な PremiumV2 層の Azure Web アプリを作成します。
 
-   ```powershell
-   $RGName = "CreatePrivateEndpointQS-rg"
-   
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile template.json -TemplateParameterFile parameters.json
-   ```
 
 PowerShell をインストールしてローカルで使用する場合、この例では Azure PowerShell モジュール バージョン 5.4.1 以降が必要になります。インストールされているバージョンを確認するには、```Get-Module -ListAvailable Az``` を実行します。アップグレードする必要がある場合は、[Azure PowerShell モジュールのインストール](https://docs.microsoft.com/ja-jp/azure/app-service/quickstart-dotnetcore)に関するページを参照してください。PowerShell をローカルで実行している場合、```Connect-AzAccount``` を実行して Azure との接続を作成することも必要です。
 
@@ -44,7 +38,7 @@ PowerShell をインストールしてローカルで使用する場合、この
 + タスク 6: プライベート エンドポイントへの接続をテストする
 + タスク 7: リソースをクリーン アップする
 
-## タスク 1: リソース グループを作成する
+## タスク 1: リソース グループを作成し、前提条件である Web アプリをデプロイします。
 
 Azure リソース グループとは、Azure リソースのデプロイと管理に使用する論理コンテナーです。
 
@@ -53,7 +47,13 @@ Azure リソース グループとは、Azure リソースのデプロイと管�
 ```Azure PowerShell
 New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
 ```
+次の ARM テンプレートをデプロイして、この演習に必要な PremiumV2 層の Azure Web アプリを作成します。
 
+   ```powershell
+   $RGName = "CreatePrivateEndpointQS-rg"
+   
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile template.json -TemplateParameterFile parameters.json
+   ```
 
 ## タスク 2: 仮想ネットワークと bastion ホストの作成
 
@@ -142,7 +142,7 @@ New-AzBastion @parameters3
 
 - 次のコマンドを使用して、仮想マシンを作成します。
 
-- Get-Credential
+- Get-Credential (注: プロンプトが表示されたら、VM のローカル管理者アカウントの資格情報 (つまり、Student および Pa55w.rd1234) を入力します)。
 
 - New-AzNetworkInterface
 
@@ -211,9 +211,7 @@ $parameters4 = @{
 
 }
 
-$vmConfig = 
-
-New-AzVMConfig @parameters2 | Set-AzVMOperatingSystem -Windows @parameters3 | Set-AzVMSourceImage @parameters4 | Add-AzVMNetworkInterface -Id $nicVM.Id
+$vmConfig = New-AzVMConfig @parameters2 | Set-AzVMOperatingSystem -Windows @parameters3 | Set-AzVMSourceImage @parameters4 | Add-AzVMNetworkInterface -Id $nicVM.Id
 
 ## Create the virtual machine ##
 
@@ -389,9 +387,9 @@ New-AzPrivateDnsZoneGroup @parameters4
 
 - 接続後にサーバーで Windows PowerShell を開きます。
 
-- nslookup <your- webapp-name>.azurewebsites.net と入力します。<your-webapp-name> を、前の手順で作成した Web アプリの名前に置き換えます。以下に表示されるようなメッセージが返されます。
+- nslookup &lt;your- webapp-name&gt;.azurewebsites.net と入力します。&lt;your-webapp-name&gt; を、前の手順で作成した Web アプリの名前に置き換えます。以下に表示されるようなメッセージが返されます。
 
-  ```| Azure PowerShell |
+  ```
   Server: UnKnown
   
   Address: 168.63.129.16
@@ -402,15 +400,16 @@ New-AzPrivateDnsZoneGroup @parameters4
   
   Address: 10.0.0.5
   
-  Aliases: mywebapp8675.azurewebsites.net  
-  ```
+  Aliases: mywebapp8675.azurewebsites.net 
+  ```  
+
 
 Web アプリ名に対応する **10.0.0.5** というプライベート IP アドレスが返されます。このアドレスは、先ほど作成した仮想ネットワークのサブネット内に存在します。
 
 - **myVM** への bastion 接続で、Internet Explorer を開きます。
 - Web アプリの URL (**https://&lt;your-webapp-name&gt;.azurewebsites.net**) を入力します。
 - アプリケーションがデプロイされていない場合は、既定の Web アプリ ページが表示されます。
-  ![アプリ サービスが稼働中であることを示す Azure のページのスクリーンショット ](../media/web-app-default-page.png)
+  ![アプリ サービスが稼働中であることを示す Azure のページのスクリーンショット](../media/web-app-default-page.png)
 - **myVM** への接続を閉じます。
 
 ## タスク 7: リソースをクリーン アップする
@@ -418,7 +417,7 @@ Web アプリ名に対応する **10.0.0.5** というプライベート IP ア�
 プライベート エンドポイントと VM を使いおわったら、[Remove-AzResourceGroup](https://docs.microsoft.com/ja-jp/powershell/module/az.resources/remove-azresourcegroup) を使用して、リソース グループとそのすべてのリソースを削除します。
 
 ```Azure PowerShell
-Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force
+Remove-AzResourceGroup -Name CreatePrivateEndpointQS-rg -Force -AsJob
 ```
 
 

@@ -38,7 +38,7 @@ Exercise:
    | -------------------- | -------------------------------- |
    | 仮想ネットワーク名 | CoreServicesVNet                 |
    | リソース グループ       | ContosoResourceGroup             |
-   | 場所             | 米国西部                          |
+   | 場所             | 米国東部                          |
 
 4. 「**次へ: IP アドレス**」を選択します。
 
@@ -75,9 +75,8 @@ Exercise:
    | リソース グループ            | ContosoResourceGroup       |
    | **インスタンスの詳細**      |                            |
    | 名前                      | CoreServicesVnetGateway    |
-   | リージョン                    | 米国西部                    |
+   | リージョン                    | 米国東部                    |
    | ゲートウェイの種類              | ExpressRoute               |
-   | VPN の種類                  | ルート ベース                |
    | SKU                       | Standard                   |
    | 仮想ネットワーク           | CoreServicesVNet           |
    | **パブリック IP アドレス**     |                            |
@@ -85,9 +84,7 @@ Exercise:
    | パブリック IP アドレス名    | CoreServicesVnetGateway-IP |
    | パブリック IP アドレスの SKU     | Basic                      |
    | 割り当て                | 構成できません。           |
-   | アクティブ/アクティブ モードの有効化 | 無効                   |
-   | BGP を構成する             | 無効                   |
-
+   
 3. 「**Review + create**」を選択します。
 
 4. ゲートウェイ構成が検証に合格することを確認してから、「**作成**」を選択します。
