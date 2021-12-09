@@ -1,4 +1,4 @@
-﻿---
+---
 Exercise:
     title: 'M06-ユニット 4 Azure portal を使用して仮想ネットワーク上に DDoS Protection を構成する'
     module: 'モジュール - ネットワーク セキュリティの設計と実装'
