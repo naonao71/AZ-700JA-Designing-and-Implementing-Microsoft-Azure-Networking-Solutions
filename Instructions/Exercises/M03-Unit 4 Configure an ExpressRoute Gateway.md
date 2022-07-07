@@ -75,7 +75,7 @@ Exercise:
    | リソース グループ            | ContosoResourceGroup       |
    | **インスタンスの詳細**      |                            |
    | 名前                      | CoreServicesVnetGateway    |
-   | リージョン                    | 米国東部                    |
+   | リージョン                    | East US                   |
    | ゲートウェイの種類              | ExpressRoute               |
    | SKU                       | Standard                   |
    | 仮想ネットワーク           | CoreServicesVNet           |
