@@ -30,11 +30,11 @@ ExpressRoute 回線を作成する方法のデモを見るには、[Azure Expres
    >
    > ExpressRoute 回線の課金は、サービス キーが発行されたときから始まります。接続プロバイダーが回線をプロビジョニングする準備ができたら、この操作を実行します。
 
-2. Azure portal のメニューで、「**+ リソースの作成**」を選択します。次の図に示すように、「**ネットワーク**」を選択してから、「**ExpressRoute**」を選択します。ExpressRoute がリストに表示されない場合は、「**マーケットプレイスの検索**」を使用して検索します。
+2. Azure portal のメニューで、「**+ リソースの作成**」を選択します。次の図に示すように、「**ネットワーク**」を選択してから、「**ExpressRoute circuits**」を選択します。ExpressRoute circuits がリストに表示されない場合は、「**マーケットプレイスの検索**」を使用して検索します。
 
    ![Azure portal - ExpressRoute 回線の作成メニュー](../media/create-expressroute-circuit-menu.png)
 
-3. 「**ExpressRoute の作成**」ページで、回線の**リソース グループ**、**リージョン**、**名前**を次のように指定します。ExpressRouteResourceGroup、East US 2、TestERCircuit。次に、「**次: 構成 &gt;**」を選択します。
+3. 「**ExpressRoute circuits の作成**」ページで、回線の**リソース グループ**、**リージョン**、**名前**を次のように指定します。ExpressRouteResourceGroup、East US 2、TestERCircuit。次に、「**次: Configuration >**」を選択します。
 
 4. このページで値を入力するときは、正しい SKU レベル (Local、Standard、または Premium) とデータ計測課金モデル (無制限または従量制) を必ず指定してください。
 
