@@ -90,7 +90,7 @@ Exercise:
    |                 | 可用性オプション                                         | インフラストラクチャの冗長性は必要ありません     |
    |                 | イメージ                                                        | Windows Server 2022 Datacenter- Gen2      |
    |                 | Azure Spot インスタンス                                          | 非選択                              |
-   |                 | サイズ                                                         | Standard_D2s_v3 - 2vcpus、8GiB メモリ     |
+   |                 | サイズ                                                         | Standard_D2as_v5 - 2vcpus、8GiB メモリ     |
    |                 | ユーザー名                                                     | TestUser                                  |
    |                 | パスワード                                                     | TestPa$$w0rd!                             |
    |                 | パブリック受信ポート                                         | 選択したポートを許可する                      |
