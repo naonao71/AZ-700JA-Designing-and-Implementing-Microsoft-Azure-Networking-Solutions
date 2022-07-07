@@ -117,7 +117,7 @@ Exercise:
    | 種類                 | **Azure エンドポイント**                |
    | 名前                 | **myPrimaryEndpoint**             |
    | ターゲット リソースの種類 | **App Service**                   |
-   | ターゲット リソース      | **ContosoWebAppEastUS (米国東部)** |
+   | ターゲット リソース      | **ContosoWebAppEastUS (East US)** |
    | 優先度             | **1**                             |
 
 
@@ -188,7 +188,7 @@ Exercise:
    ```powershell
 
    Remove-AzResourceGroup -Name 'Contoso-RG-TM1' -Force -AsJob
-   Remove-AzResourceGroup -Name 'Contoso-RG-TM' -Force -AsJob
+   Remove-AzResourceGroup -Name 'Contoso-RG-TM2' -Force -AsJob
 
    ```
 
