@@ -86,7 +86,7 @@ Exercise:
    | --------------- | ------------------------------------------------------------ | ----------------------------------------- |
    | 基本          | リソース グループ                                               | ContosoResourceGroup                      |
    |                 | 仮想マシン名                                         | ManufacturingTestVM                       |
-   |                 | リージョン                                                       | (Europe) West Europe                             |
+   |                 | リージョン                                                       | (Europe) North Europe                           |
    |                 | 可用性オプション                                         | インフラストラクチャの冗長性は必要ありません     |
    |                 | イメージ                                                        | Windows Server 2022 Datacenter- Gen2      |
    |                 | Azure Spot インスタンス                                          | 非選択                              |
