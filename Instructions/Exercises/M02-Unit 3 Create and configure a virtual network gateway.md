@@ -97,7 +97,7 @@ Exercise:
    |                 | 受信ポートの選択                                         | RDP (3389)                                |
    | ディスク           | 変更は必要ありません                                          |                                           |
    | ネットワーキング      | 仮想ネットワーク                                              | ManufacturingVnet                         |
-   |                 | サブネット                                                       | ManufacturingSystemSubnet (10.40.40.0/24) |
+   |                 | サブネット                                                       | ManufacturingSystemSubnet (10.30.10.0/24) |
    |                 | パブリック IP                                                    | (新しい) ManufacturingTestVM-ip              |
    |                 | NIC ネットワーク セキュリティ グループ                                   | Basic                                     |
    |                 | パブリック受信ポート                                         | 選択したポートを許可する                      |
