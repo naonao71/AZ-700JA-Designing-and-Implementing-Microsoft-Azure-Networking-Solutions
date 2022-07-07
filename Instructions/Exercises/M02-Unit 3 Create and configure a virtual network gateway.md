@@ -117,7 +117,7 @@ Exercise:
 3. 「**ManufacturingTestVM**」で、**「接続」 &gt; 「RDP」** を選択します。
 4. 「**ManufacturingTestVM**」の **|** 「**接続**」で、「**RDP ファイルのダウンロード**」を選択します。
 5. RDP ファイルをデスクトップに保存します。
-6. RDP ファイル、ユーザー名 **TestUser**、パスワード **TestPa$w0rd!** を使用して、ManufacturingTestVM に接続します。
+6. RDP ファイル、ユーザー名 **TestUser**、パスワード **TestPa$$w0rd!** を使用して、ManufacturingTestVM に接続します。
 7. Azure portal のホーム ページで、「**仮想マシン**」を選択します。
 8. 「**CoreServicesTestVM**」を選択します。
 9. 「**CoreServicesTestVM**」で、**「接続」 &gt; 「RDP」** を選択します。
