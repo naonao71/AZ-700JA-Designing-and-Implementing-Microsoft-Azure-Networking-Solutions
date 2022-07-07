@@ -76,9 +76,9 @@ Exercise:
 
 ## タスク 3: ManufacturingTestVM を作成する
 
-1. Azure portal の「ホーム」ページで、グローバル検索を使用して、「**Virtual Networks**」と入力し、サービスの下で、仮想ネットワークを選択します。
+1. Azure portal の「ホーム」ページで、グローバル検索を使用して、「**Virtual Machines**」と入力し、サービスの下で、Virtual Machinesを選択します。
 
-2. 仮想マシンで、**「+ 作成」、「+ 仮想マシン」** を選択します。
+2. Virtual Machinesで、**「+ 作成」、「+ Azure 仮想マシン」** を選択します。
 
 3. 次の表の情報を使用して、VM を作成します。
 
