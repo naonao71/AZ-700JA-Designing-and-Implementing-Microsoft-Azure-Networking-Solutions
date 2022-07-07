@@ -41,7 +41,7 @@ Exercise:
    | 公開          | **コード**                                                     |
    | ランタイム スタック    | **ASP.NET V4.8**                                             |
    | オペレーティング システム | **Windows**                                                  |
-   | リージョン           | **米国東部**                                                  |
+   | リージョン           | **East US**                                                  |
    | Windows プラン     | 「**新しい名前の作成**」を選択します。 **ContosoAppServicePlanEastUS** |
    | SKU とサイズ     | **Standard S1 100 total ACU、1.75-GB メモリ**               |
 
