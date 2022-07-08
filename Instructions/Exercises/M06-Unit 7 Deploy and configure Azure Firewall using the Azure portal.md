@@ -55,7 +55,7 @@ Contoso のネットワーク セキュリティ チームの一員である次�
 
 3. 以前に作成した「**Test-FW-RG**」を選択します。
 
-4. 「**名前**」ボックスに、「**Test-FW-VN**」名前を入力します。
+4. 「**名前**」ボックスに、「**Test-FW-VN**」を入力します。
 
    ![仮想ネットワークを作成する - 基本タブ](../media/create-vnet-basics-for-azure-firewall.png)
 
