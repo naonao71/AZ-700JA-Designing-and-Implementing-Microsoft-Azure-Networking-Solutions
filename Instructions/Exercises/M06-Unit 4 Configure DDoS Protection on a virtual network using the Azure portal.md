@@ -51,7 +51,7 @@ Contoso のネットワーク セキュリティチームを担当し、仮想�
 
 3. 「**基本**」タブの「**リソース グループ**」リストで、作成したリソース グループを選択します。
 
-4. 「**インスタンス名**」ボックスに「**MyDdoSProtectionPlan**」と入力し、「**Review + create**」をクリックします。 
+4. 「**インスタンス名**」ボックスに「**MyDdoSProtectionPlan**」と入力し、「**確認および作成**」をクリックします。 
 
    ![DDoS Protection プランを作成する](../media/create-ddos-protection-plan-new.png)
 
