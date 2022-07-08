@@ -160,6 +160,7 @@ Azure が Application Gateway を作成するのに数分かかる場合があ�
    | **ネットワーキング**       |                                                  |
    | 仮想ネットワーク      | ContosoVnet                                      |
    | サブネット               | BackendSubnet (10.0.1.0/24)                      |
+   | パブリックIP            | なし                      |
    | **管理**       |                                                  |
    | ブート診断     | 無効化                                          |
 
