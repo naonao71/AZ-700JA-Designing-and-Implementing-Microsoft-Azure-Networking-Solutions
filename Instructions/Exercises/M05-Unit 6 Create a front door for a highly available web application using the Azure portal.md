@@ -105,7 +105,7 @@ Exercise:
 
 1. Azure portal で、Front Door フロントエンドに移動します。「**リソースに移動**」を選択します。または、「リソース、サービス、ドキュメントの検索 (G+/)」で、**Front Doors** を入力し、結果から「**Front Doors**」を選択してから、Front Doors を選択します。
 
-2. 「Front Door」ページで、**フロントエンド ホスト**の URL をメモします。この演習では contoso-frontend.azurefd.net を使用しますが、名前が一意になるように変更した可能性があります。
+2. 「Front Door」ページで、**Endpoint hostname**の URL をメモします。この演習では contoso-frontend.azurefd.net を使用しますが、名前が一意になるように変更した可能性があります。
 
    ![Azure portal フロントエンド ページ - フロントエンド URL を確認する](../media/frontend-url.png)
 
