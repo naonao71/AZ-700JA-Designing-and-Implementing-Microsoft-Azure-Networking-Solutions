@@ -81,7 +81,7 @@ Contoso のネットワーク セキュリティチームを担当し、仮想�
 
    ![仮想ネットワークを作成する - セキュリティ タブ](../media/create-virtual-network-security-for-ddos-protection.png)
 
-7. 「**Review + create**」をクリックします。
+7. 「**確認および作成**」をクリックします。
 
 8. 「**作成**」をクリックします。
 
