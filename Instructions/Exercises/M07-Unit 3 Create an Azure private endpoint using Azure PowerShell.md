@@ -191,49 +191,31 @@ Azure でのアウトバウンド接続の詳細については、アウトバ�
 ## Place web app into variable. Replace <webapp-resource-group-name> with the resource group of your webapp. ##
 
 ## Replace <your-webapp-name> with your webapp name ##
-
 $webapp = Get-AzWebApp -ResourceGroupName <webapp-resource-group-name> -Name <your-webapp-name>
 
 ## Create Private Endpoint connection. ##
-
 $parameters1 = @{
-
  Name = 'myConnection'
-
  PrivateLinkServiceId = $webapp.ID
-
  GroupID = 'sites'
-
 }
-
 $privateEndpointConnection = New-AzPrivateLinkServiceConnection @parameters1
 
 ## Place virtual network into variable. ##
-
 $vnet = Get-AzVirtualNetwork -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Name 'myVNet'
 
 ## Disable private endpoint network policy ##
-
 $vnet.Subnets[0].PrivateEndpointNetworkPolicies = "Disabled"
-
 $vnet | Set-AzVirtualNetwork
 
 ## Create private endpoint
-
 $parameters2 = @{
-
  ResourceGroupName = 'CreatePrivateEndpointQS-rg'
-
  Name = 'myPrivateEndpoint'
-
  Location = 'eastus'
-
  Subnet = $vnet.Subnets[0]
-
  PrivateLinkServiceConnection = $privateEndpointConnection
-
 }
-
 New-AzPrivateEndpoint @parameters2 
 ```
 
@@ -254,63 +236,38 @@ New-AzPrivateEndpoint @parameters2
 
 ```Azure PowerShell
 ## Place virtual network into variable. ##
-
 $vnet = Get-AzVirtualNetwork -ResourceGroupName 'CreatePrivateEndpointQS-rg' -Name 'myVNet'
 
 ## Create private dns zone. ##
-
 $parameters1 = @{
-
  ResourceGroupName = 'CreatePrivateEndpointQS-rg'
-
  Name = 'privatelink.azurewebsites.net'
-
 }
-
 $zone = New-AzPrivateDnsZone @parameters1
 
 ## Create dns network link. ##
-
 $parameters2 = @{
-
  ResourceGroupName = 'CreatePrivateEndpointQS-rg'
-
  ZoneName = 'privatelink.azurewebsites.net'
-
  Name = 'myLink'
-
  VirtualNetworkId = $vnet.Id
-
 }
-
 $link = New-AzPrivateDnsVirtualNetworkLink @parameters2
 
 ## Create DNS configuration ##
-
 $parameters3 = @{
-
  Name = 'privatelink.azurewebsites.net'
-
  PrivateDnsZoneId = $zone.ResourceId
-
 }
-
 $config = New-AzPrivateDnsZoneConfig @parameters3
 
 ## Create DNS zone group. ##
-
 $parameters4 = @{
-
  ResourceGroupName = 'CreatePrivateEndpointQS-rg'
-
  PrivateEndpointName = 'myPrivateEndpoint'
-
  Name = 'myZoneGroup'
-
  PrivateDnsZoneConfig = $config
-
 }
-
 New-AzPrivateDnsZoneGroup @parameters4 
 ```
 
