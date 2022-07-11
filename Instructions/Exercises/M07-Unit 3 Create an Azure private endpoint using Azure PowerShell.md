@@ -296,22 +296,18 @@ New-AzPrivateDnsZoneGroup @parameters4
 
   ```
   Server: UnKnown
-  
   Address: 168.63.129.16
   
   Non-authoritative answer:
-  
   Name: mywebapp8675.privatelink.azurewebsites.net
-  
   Address: 10.0.0.5
-  
   Aliases: mywebapp8675.azurewebsites.net 
   ```  
 
 
 Web アプリ名に対応する **10.0.0.5** というプライベート IP アドレスが返されます。このアドレスは、先ほど作成した仮想ネットワークのサブネット内に存在します。
 
-- **myVM** への bastion 接続で、Internet Explorer を開きます。
+- **myVM** への bastion 接続で、Microsoft Edge を開きます。
 - Web アプリの URL (**https://&lt;your-webapp-name&gt;.azurewebsites.net**) を入力します。
 - アプリケーションがデプロイされていない場合は、既定の Web アプリ ページが表示されます。
   ![アプリ サービスが稼働中であることを示す Azure のページのスクリーンショット](../media/web-app-default-page.png)
