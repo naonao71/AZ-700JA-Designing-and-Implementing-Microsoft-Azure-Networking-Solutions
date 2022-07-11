@@ -159,7 +159,7 @@ $parameters3 = @{
 $parameters4 = @{
  PublisherName = 'MicrosoftWindowsServer'
  Offer = 'WindowsServer'
- Skus = '20-Datacenter'
+ Skus = '2022-Datacenter'
  Version = 'latest'
 }
 $vmConfig = New-AzVMConfig @parameters2 | Set-AzVMOperatingSystem -Windows @parameters3 | Set-AzVMSourceImage @parameters4 | Add-AzVMNetworkInterface -Id $nicVM.Id
