@@ -23,9 +23,9 @@ Exercise:
 
 ### ManufacturingVM を作成する
 
-1. Azure portal の「ホーム」ページで、グローバル検索を使用して、「**Virtual Networks**」と入力し、サービスの下で、仮想ネットワークを選択します。
+1. Azure portal の「ホーム」ページで、グローバル検索を使用して、「**Virtual Machines**」と入力し、サービスの下で、Virtual Machinesを選択します。
 
-2. 仮想マシンで、**「+ 作成」、「+ 仮想マシン」** を選択します。
+2. 仮想マシンで、**「+ 作成」、「+ Azure 仮想マシン」** を選択します。
 
 3. 次の表の情報を使用して、VM を作成します。
 
@@ -33,11 +33,11 @@ Exercise:
 | --------------- | ------------------------------------------------------------ | ------------------------------------- |
 | 基本          | リソース グループ                                               | ContosoResourceGroup                  |
 |                 | 仮想マシン名                                         | ManufacturingVM                       |
-|                 | リージョン                                                       | 西ヨーロッパ                           |
+|                 | リージョン                                                       | (Europe) West Europe            |
 |                 | 可用性オプション                                         | インフラストラクチャの冗長性は必要ありません |
-|                 | イメージ                                                        | Windows Server 2022 Datacenter- Gen1  |
+|                 | イメージ                                                        | Windows Server 2022 Datacenter- Gen2  |
 |                 | Azure Spot インスタンス                                          | 非選択                          |
-|                 | サイズ                                                         | Standard_D2s_v3 - 2vcpus、8GiB メモリ |
+|                 | サイズ                                                         | Standard_D2as_v5 - 2vcpus、8GiB メモリ |
 |                 | ユーザー名                                                     | TestUser                              |
 |                 | パスワード                                                     | TestPa$$w0rd!                         |
 |                 | パブリック受信ポート                                         | 選択したポートを許可する                  |
@@ -53,14 +53,14 @@ Exercise:
 | 管理      | 変更は必要ありません                                          |                                       |
 | 詳細        | 変更は必要ありません                                          |                                       |
 | タグ            | 変更は必要ありません                                          |                                       |
-| Review + create | 設定を確認し、「作成」を選択します                       |                                       |
+| 確認および作成 | 設定を確認し、「作成」を選択します                       |                                       |
 
 
 4. デプロイが完了したら、**[リソースに移動]** を選択します。
 
 ## タスク 2: RDP を使用してテスト VM に接続する
 
-1. Azure portal のホーム ページで、「**仮想マシン**」を選択します。
+1. Azure portal のホーム ページで、「**Virtual Machines**」を選択します。
 
 2. 「**ManufacturingVM**」を選択します。
 
@@ -72,7 +72,7 @@ Exercise:
 
 6. RDP ファイル、ユーザー名 **TestUser**、パスワード **TestPa$w0rd!** を使用して、ManufacturingVM に接続します。
 
-7. Azure portal のホーム ページで、「**仮想マシン**」を選択します。
+7. Azure portal のホーム ページで、「**Virtual Machines**」を選択します。
 
 8. 「**TestVM1**」を選択します。
 
@@ -132,7 +132,7 @@ Exercise:
 |                                      | ピアリング リンク名                             | ManufacturingVnet-to-CoreServicesVnet |
 |                                      | バーチャル ネットワーク デプロイ モデル              | Resource Manager                      |
 |                                      | リソース ID を知っている                         | 非選択                          |
-|                                      | サブスクリプション                                  | MOC Subscription-lodxxxxxxxx          |
+|                                      | サブスクリプション                                  |Azure Pass (使用しているサブスクリプション）   |
 |                                      | 仮想ネットワーク                               | ManufacturingVnet                     |
 |                                      | リモート バーチャル ネットワークのトラフィック             | 許可 (既定)                       |
 |                                      | リモート バーチャル ネットワークから転送されたトラフィック | 許可 (既定)                       |
