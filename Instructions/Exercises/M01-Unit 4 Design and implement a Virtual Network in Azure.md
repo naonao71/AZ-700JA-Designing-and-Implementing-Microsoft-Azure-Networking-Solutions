@@ -68,9 +68,9 @@ ManufacturingVNet West Europe 10.30.0.0/16
 | **タブ**         | **オプション**                                 | **値**            |
 | --------------- | ------------------------------------------ | -------------------- |
 | 基本          | リソース グループ                             | ContosoResourceGroup |
-|                 | リージョン                                     | (米国) 米国東部         |
+|                 | リージョン                                     | (US) East US         |
 | タグ            | 変更は必要ありません                        |                      |
-| Review + create | 設定を確認し、「**作成**」を選択します |                      |
+| 確認および作成 | 設定を確認し、「**作成**」を選択します |                      |
 
 
 5. 「リソース」グループで、**ContosoResourceGroup** がリストに表示されていることを確認します。
@@ -79,8 +79,8 @@ ManufacturingVNet West Europe 10.30.0.0/16
 
 ## タスク 2: CoreServicesVnet 仮想ネットワークとサブネットを作成する
 
-1. Azure portal の「ホーム」ページで、「グローバル検索」バーに移動して、「**Virtual Networks**」を検索し、サービスの下で、仮想ネットワークを選択します。  ![Azure portal の「ホーム」ページの「グローバル検索」バーで、仮想ネットワークを検索した結果。](../media/global-search-bar.PNG)
-2. 「Virtual Network」ページで、「**作成**」を選択します。  ![仮想ネットワークの作成ウィザード。](../media/create-virtual-network.png)
+1. Azure portal の「ホーム」ページで、「グローバル検索」バーに移動して、「**仮想ネットワーク**」を検索し、サービスの下で、仮想ネットワークを選択します。  ![Azure portal の「ホーム」ページの「グローバル検索」バーで、仮想ネットワークを検索した結果。](../media/global-search-bar.PNG)
+2. 「仮想ネットワーク」ページで、「**作成**」を選択します。  ![仮想ネットワークの作成ウィザード。](../media/create-virtual-network.png)
 3. 次の表の情報を使用して、CoreServicesVnet 仮想ネットワークを作成します。  
    ‎![Azure 仮想ネットワーク デプロイの既定の IP アドレス空間の IP アドレス構成を削除または上書きします ](../media/default-vnet-ip-address-range-annotated.png)
 
@@ -90,7 +90,7 @@ ManufacturingVNet West Europe 10.30.0.0/16
 | ------------ | ------------------ | -------------------- |
 | 基本       | リソース グループ     | ContosoResourceGroup |
 |              | 名前               | CoreServicesVnet     |
-|              | リージョン             | (米国) 米国東部         |
+|              | リージョン             | East US        |
 | IP アドレス | IPv4 アドレス空間 | 10.20.0.0/16         |
 
  4. 次の表の情報を使用して、CoreServicesVnet サブネットを作成します。
@@ -108,7 +108,7 @@ ManufacturingVNet West Europe 10.30.0.0/16
 | PublicWebServiceSubnet | サブネット名          | PublicWebServiceSubnet |
 |                        | サブネット アドレス範囲 | 10.20.30.0/24          |
 
- 6. CoreServicesVnet とそれに関連するサブネットの作成を完了するには、「**Review + create**」を選択します。
+ 6. CoreServicesVnet とそれに関連するサブネットの作成を完了するには、「**確認および作成**」を選択します。
 
  7. 構成が検証に合格したことを確認してから、「**作成**」を選択します。
  
@@ -121,7 +121,7 @@ ManufacturingVNet West Europe 10.30.0.0/16
 | ------------ | ------------------ | --------------------- |
 | 基本       | リソース グループ     | ContosoResourceGroup  |
 |              | 名前               | ManufacturingVnet     |
-|              | リージョン             | (ヨーロッパ) 西ヨーロッパ  |
+|              | リージョン             | West Europe  |
 | IP アドレス | IPv4 アドレス空間 | 10.30.0.0/16          |
 
 
@@ -145,7 +145,7 @@ ManufacturingVNet West Europe 10.30.0.0/16
 | ------------ | ------------------ | -------------------- |
 | 基本       | リソース グループ     | ContosoResourceGroup |
 |              | 名前               | ResearchVnet         |
-|              | リージョン             | 東南アジア       |
+|              | リージョン             | Southeast Asia       |
 | IP アドレス | IPv4 アドレス空間 | 10.40.0.0/16         |
 
 | **サブネット**           | **オプション**           | **値**            |
