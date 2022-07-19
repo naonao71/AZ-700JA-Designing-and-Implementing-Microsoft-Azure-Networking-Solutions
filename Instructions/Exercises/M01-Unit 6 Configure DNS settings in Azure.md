@@ -229,7 +229,7 @@ Exercise:
 
 16. IP アドレスが DNS ゾーンでメモしたものと同じであることを確認します。
 
-17. ファイアウォール設定でICMPを許可するため、Command Prompt 検索バーに入力し、Command Promptを右クリックして「Run as administrator」を実行して次のコマンドを実行します。
+17. ファイアウォール設定でICMPを許可するため、検索バーに「Command Prompt」と入力し、「Command Prompt」を右クリックして「Run as administrator」を実行して次のコマンドを実行します。
 
 ```powershell
 netsh advfirewall firewall add rule name="ICMP Allow Ping V4" protocol="icmpv4:8,any" dir=in action=allow
