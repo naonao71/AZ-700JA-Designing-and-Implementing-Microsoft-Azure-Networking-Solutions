@@ -223,18 +223,24 @@ Exercise:
 
 ## タスク 8: VM に IIS をインストールする
 
-1. Azure portal のホーム ページで、「**すべてのリソース**」をクリックし、リソース一覧から **myVM1** をクリックします。
+1. Azure portal のホーム ページで、「**すべてのリソース**」をクリックし、リソース一覧から **az700-vm1** をクリックします。
 2. 「**概要**」ページで、「**接続**」、「**Bastion**」の順に選択します。
 3. 「**Bastion を使用**」をクリックします。
 4. 「**ユーザー名**」ボックスに「**TestUser**」と入力し、「**パスワード**」ボックスに「**TestPa$$w0rd!**」と入力して、「**接続**」をクリックします。
-5. **myVM1** ウィンドウが別のブラウザー タブで開きます。
+5. **az700-vm1** ウィンドウが別のブラウザー タブで開きます。
 6. 「**ネットワーク**」ペインが表示されたら、「**はい**」をクリックします。
 7. ウィンドウの左下隅にある「**Windows スタート**」アイコンをクリックしてから、「**Windows PowerShell**」タイルをクリックします。
 8. IIS インストールするには、PowerShell で次のコマンドを実行します。Install-WindowsFeature -name Web-Server -IncludeManagementTools
 9. 既存の既定の Web ホームページを削除するには、Power Shell で次のコマンドを実行します。 Remove-Item C:\inetpub\wwwroot\iisstart.htm
-10. 新しい既定の Web ホーム ページを追加してコンテンツを追加するには、PowerShell で次のコマンドを実行します。Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
-11. ブラウザー タブを閉じて、**myVM1** への Bastion セッションを閉じます。
-12. 上記の手順 1 ~ 11 をさらに 2 回繰り返して、IIS と更新された既定のホーム ページを **myVM2** および **myVM3** 仮想マシンにインストールします。
+10. 新しい既定の Web ホーム ページを追加してコンテンツを追加するには、PowerShell で次のコマンドを実行します。Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername) 
+
+   ```powershell
+   Install-WindowsFeature -name Web-Server -IncludeManagementTools
+   Remove-Item C:\inetpub\wwwroot\iisstart.htm
+   Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
+   ```
+12. ブラウザー タブを閉じて、**az700-vm1** への Bastion セッションを閉じます。
+13. 上記の手順 1 ~ 11 をさらに 2 回繰り返して、IIS と更新された既定のホーム ページを **az700-vm2** および **az700-vm3** 仮想マシンにインストールします。
 
  
 
