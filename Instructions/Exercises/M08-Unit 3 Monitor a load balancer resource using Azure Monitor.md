@@ -104,7 +104,7 @@ Exercise:
 
    | **設定**           | **値**                |
    | --------------------- | ------------------------ |
-   | 名前　    　　　　　　  | **FrontEndip**           |
+   | 名前　    　　　　　　  | **LoadBalancerFrontEnd**           |
    | 仮想ネットワーク　      | **IntLB-VNet** (default) |
    | サブネット                | **myBackendSubnet**   |
    | IP アドレスの割り当て | **動的**              |
@@ -128,9 +128,9 @@ Exercise:
    | --------------- | -------------------- |
    | 名前            | **myBackendPool**    |
    | 仮想ネットワーク | **IntLB-VNet**       |
-   | 関連付け先   | **仮想マシン** |
+   | バックエンドプールの構成  | **NIC** |
 
-4. 「**追加**」をクリックします。
+4. 「**保存**」をクリックします。
 
    ![ロード バランサーで作成されたバックエンド プールを表示する](../media/create-backendpool.png)
 
@@ -140,7 +140,7 @@ Exercise:
 
 ロード バランサーは、正常性プローブを使用してアプリの状態を監視します。正常性プローブは、正常性チェックへの応答に基づいて、ロード バランサーに含める VM を追加したり削除したりします。ここでは、VM の正常性を監視するための正常性プローブを作成します。
 
-1. ロード バランサーの「**バックエンド プール**」ページの「**設定**」で、「**正常性プローブ**」をクリックし、「**追加**」をクリックします。
+1. ロード バランサーの「**正常性プローブ**」をクリックし、「**追加**」をクリックします。
 
 2. 「**正常性プローブの追加**」ページで、以下の表の情報を入力します。
 
@@ -151,7 +151,6 @@ Exercise:
    | ポート                | **80**            |
    | パス                | **/**             |
    | サイクル間隔            | **15**            |
-   | 異常なしきい値 | **2**             |
 
 3. 「**追加**」をクリックします。
 
@@ -163,7 +162,7 @@ Exercise:
 
 ロード バランサー規則の目的は、一連の VM に対するトラフィックの分散方法を定義することです。着信トラフィック用のフロントエンド IP 構成と、トラフィックを受信するためのバックエンド IP プールを定義します。送信元と送信先のポートは、この規則で定義します。ここでは、ロード バランサー規則を作成します。
 
-1. ロード バランサーの「**バックエンド プール**」ページの「**設定**」で、「**負荷分散規則**」をクリックし、「**追加**」をクリックします。
+1. ロード バランサーの「**負荷分散規則**」をクリックし、「**追加**」をクリックします。
 
 2. 「**負荷分散規則の追加**」ページで、以下の表の情報を入力します。
 
@@ -172,10 +171,10 @@ Exercise:
    | 名前                   | **myHTTPRule**           |
    | IP バージョン             | **IPv4**                 |
    | フロントエンド IP アドレス    | **LoadBalancerFrontEnd** |
+   | バックエンド プール           | **myBackendPool**        |
    | プロトコル               | **TCP**                  |
    | ポート                   | **80**                   |
    | バックエンド ポート           | **80**                   |
-   | バックエンド プール           | **myBackendPool**        |
    | 正常性プローブ           | **myHealthProbe**        |
    | セッション永続化    | **なし**                 |
    | アイドル タイムアウト (分) | **15**                   |
@@ -192,16 +191,16 @@ Exercise:
 
 1. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
 
-2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次の **azuredeploy.json**、**azuredeploy.parameters.vm1.json**、**azuredeploy.parameters.vm2.json**、 **azuredeploy.parameters.vm3.json** ファイルを CloudShell ホーム ディレクトリにソース フォルダ－ **F:\Allfiles\Exercises\M08** からアップロードします。
+2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次の **azuredeploy.json.json**、**azuredeploy.parameters.vm1.json**、**azuredeploy.parameters.vm2.json**、 **azuredeploy.parameters.vm3.json** ファイルを CloudShell ホーム ディレクトリに保存した **\Allfiles\Exercises\M04** からアップロードします。
 
 3. 次の ARM テンプレートをデプロイして、この演習に必要な仮想ネットワーク、サブネット、VM を作成します。
 
    ```powershell
    $RGName = "IntLB-RG"
    
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm1.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm2.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm3.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm1.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm2.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm3.json
    ```
   
     > **注:** デプロイには数分かかる場合があります。 
@@ -212,13 +211,11 @@ Exercise:
 
 2. 「**設定**」で「**バックエンド プール**」を選択し、「**myBackendPool**」を選択します。
 
-3. 「**関連付け先**」ボックスで、「**仮想マシン**」を選択します。
+3. 「**IP構成*」で、「**追加**」をクリックします。
 
-4. 「**仮想マシン**」で、「**追加**」をクリックします。
+4. 3 つの VM すべて (**az700-vm1**、**az700-vm2**、**az700-vm3**) のチェックボックスを選択し、「**追加**」をクリックします。
 
-5. 3 つの VM すべて (**myVM1**、**myVM2**、**myVM3**) のチェックボックスを選択し、「**追加**」をクリックします。
-
-6. **myBackendPool** ページで、「**保存**」をクリックします。
+5. **myBackendPool** ページで、「**保存**」をクリックします。
 
    ![ロード バランサーのバックエンド プールに追加された VM を表示する](../media/add-vms-backendpool.png)
 
