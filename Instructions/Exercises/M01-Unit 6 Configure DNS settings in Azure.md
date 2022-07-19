@@ -229,9 +229,15 @@ Exercise:
 
 16. IP アドレスが DNS ゾーンでメモしたものと同じであることを確認します。
 
-17. コマンド ping TestVM2.contoso.com を入力します。
+17. ファイアウォール設定でICMPを許可するため、Command Prompt 検索バーに入力し、Command Promptを右クリックして「Run as administrator」を実行して次のコマンドを実行します。
 
-18. TestVM2 から 4 つの応答を受信することを確認します。
+```powershell
+netsh advfirewall firewall add rule name="ICMP Allow Ping V4" protocol="icmpv4:8,any" dir=in action=allow
+```
+
+18. コマンド ping TestVM2.contoso.com を入力します。
+
+19. TestVM2 から 4 つの応答を受信することを確認します。
 
  
 
