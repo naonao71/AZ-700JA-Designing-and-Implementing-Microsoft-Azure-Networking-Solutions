@@ -84,9 +84,9 @@ Exercise:
    ```powershell
    $RGName = "IntLB-RG"
    
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm1.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm2.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json -TemplateParameterFile azuredeploy.parameters.vm3.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm1.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm2.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm3.json
    ```
 > コマンドでの実行に失敗する場合は、**カスタム テンプレートからのデプロイ**から、**「エディターで独自のテンプレートを作成する」** を選択し、ファイルの読み込みから、「azuredeploy.json.json」を選択して保存します。その後、「パラメータの編集」をクリックし、「azuredeploy.parameters.vm1.json」を選択して保存します。パラメーターを確認して空白があればそれを補完し、デプロイを行います。同様の操作をazuredeploy.parameters.vm2.json、azuredeploy.parameters.vm3.json ファイルに対して行います。
 
