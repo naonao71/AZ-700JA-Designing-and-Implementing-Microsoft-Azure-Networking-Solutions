@@ -113,7 +113,7 @@ Exercise:
 |                 | 仮想マシン名                                         | TestVM1                               |
 |                 | リージョン                                                       | (US) East US                             |
 |                 | 可用性オプション                                         | インフラストラクチャの冗長性は必要ありません |
-|                 | イメージ                                                        | Windows Server 2022 Datacenter- Gen1  |
+|                 | イメージ                                                        | Windows Server 2022 Datacenter- Gen2  |
 |                 | Azure Spot インスタンス                                          | 非選択                          |
 |                 | サイズ                                                         | Standard_D2s_v3 - 2vcpus、8GiB メモリ |
 |                 | ユーザー名                                                     | TestUser                              |
@@ -150,7 +150,7 @@ Exercise:
 |                 | 仮想マシン名                                         | TestVM2                               |
 |                 | リージョン                                                       | (US) East US                       |
 |                 | 可用性オプション                                         | インフラストラクチャの冗長性は必要ありません |
-|                 | イメージ                                                        | Windows Server 2022 Datacenter- Gen1  |
+|                 | イメージ                                                        | Windows Server 2022 Datacenter- Gen2  |
 |                 | Azure Spot インスタンス                                          | 非選択                          |
 |                 | サイズ                                                         | Standard_D2s_v3 - 2vcpus、8GiB メモリ |
 |                 | ユーザー名                                                     | TestUser                              |
