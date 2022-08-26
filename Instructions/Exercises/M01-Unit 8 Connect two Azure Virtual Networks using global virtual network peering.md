@@ -152,10 +152,9 @@ Test-NetConnection 10.20.20.4 -port 3389
 
 2. 次のコマンドを使用して、CoreServicesVnet 上の TestVM1 への接続があることを確認します。 
 
-| PowerShell                               |
-| ---------------------------------------- |
-| Test-NetConnection 10.20.20.4 -port 3389 |
-
+```powershell
+Test-NetConnection 10.20.20.4 -port 3389
+```
 
 3. テスト接続が成功すると、次のような結果が表示されます。
    ![TCP テストが成功したことを示す Test-NetConnection 10.20.20.4 -port 3389 のPowershell ウィンドウ: true](../media/test-connection-succeeded.png)
