@@ -100,10 +100,9 @@ Exercise:
 
 2. 次のコマンドを使用して、CoreServicesVnet 上の TestVM1 への接続がないことを確認します。TestVM1 には必ず IPv4 アドレスを使用してください。
 
-| PowerShell                               |
-| ---------------------------------------- |
-| Test-NetConnection 10.20.20.4 -port 3389 |
-
+```powershell
+Test-NetConnection 10.20.20.4 -port 3389
+```
 
 3. テスト接続が失敗するはずです。次のような結果が表示されます。
    ![Test-NetConnection 10.20.20.4 -port3389 が失敗したことを示す PowerShell ウィンドウ ](../media/test-netconnection-fail.png)
