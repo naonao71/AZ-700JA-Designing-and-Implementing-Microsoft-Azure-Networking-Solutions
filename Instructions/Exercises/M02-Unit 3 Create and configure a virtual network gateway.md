@@ -172,7 +172,7 @@ Exercise:
    |                 |                   | パブリック IP アドレス名                      | CoreServicesVnetGateway-ip   |
    |                 |                   | パブリック IP アドレスの SKU                       | Basic                        |
    |                 |                   | アクティブ/アクティブ モードの有効化                   | 無効                     |
-   |                 |                   | BGP を構成する                               | 無効                     |
+   |                 |                   | BGP の構成                               | 無効                     |
    | Review + create |                   | 設定を確認し、「**作成**」を選択します。 |                              |
 
    > [!注] 
@@ -203,7 +203,7 @@ Exercise:
    |                 |                   | パブリック IP アドレス名                      | ManufacturingVnetGateway-ip  |
    |                 |                   | パブリック IP アドレスの SKU                       | Basic                        |
    |                 |                   | アクティブ/アクティブ モードの有効化                   | 無効                     |
-   |                 |                   | BGP を構成する                               | 無効                     |
+   |                 |                   | BGP の構成                               | 無効                     |
    | Review + create |                   | 設定を確認し、「**作成**」を選択します。 |                              |
    
    > [!注]
