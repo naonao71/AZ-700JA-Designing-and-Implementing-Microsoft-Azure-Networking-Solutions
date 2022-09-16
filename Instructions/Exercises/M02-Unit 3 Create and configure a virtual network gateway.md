@@ -230,7 +230,7 @@ Exercise:
    | ------------------------------ | --------------------------------- |
    | 名前                           | CoreServicesGW-to-ManufacturingGW |
    | 接続の種類                | VNet-to-VNet                      |
-   | 1 番目の仮想ネットワーク ゲートウェイ  | CoreServicesVnetGateway           |
+   | 最初の仮想ネットワーク ゲートウェイ  | CoreServicesVnetGateway           |
    | 2 番目の仮想ネットワーク ゲートウェイ | ManufacturingVnetGateway          |
    | 共有キー (PSK)               | abc123                            |
    | Azure プライベート IP アドレスを使用する   | 非選択                      |
@@ -257,7 +257,7 @@ Exercise:
    | ------------------------------ | --------------------------------- |
    | 名前                           | ManufacturingGW-to-CoreServicesGW |
    | 接続の種類                | VNet-to-VNet                      |
-   | 1 番目の仮想ネットワーク ゲートウェイ  | ManufacturingVnetGateway          |
+   | 最初の仮想ネットワーク ゲートウェイ  | ManufacturingVnetGateway          |
    | 2 番目の仮想ネットワーク ゲートウェイ | CoreServicesVnetGateway           |
    | 共有キー (PSK)               | abc123                            |
    | Azure プライベート IP アドレスを使用する   | 非選択                      |
