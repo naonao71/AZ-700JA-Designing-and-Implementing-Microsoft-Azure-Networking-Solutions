@@ -24,7 +24,7 @@ Exercise:
 
 2. ポータルで、検索ボックスに「仮想 WAN」と入力し、結果一覧から「**仮想 WAN**」を選択します。
 
-   ![Azure portal で仮想ネットワークを検索します。](../media/search-for-virtual-wan.png)
+#rem:   ![Azure portal で仮想ネットワークを検索します。](../media/search-for-virtual-wan.png)
 
  
 
