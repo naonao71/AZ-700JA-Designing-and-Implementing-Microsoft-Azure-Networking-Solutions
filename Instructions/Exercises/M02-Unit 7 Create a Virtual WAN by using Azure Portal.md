@@ -87,19 +87,14 @@ Exercise:
 
 4. 「接続の追加」で、次の情報を使用して接続を作成します。
 
-   - **接続名:** ContosoVirtualWAN-to-ResearchVNet
-
-   - **ハブ:** ContosoVirtualWANHub-WestUS
-
-   - **サブスクリプション:** 変更なし
-
-   - **リソース グループ：** ContosoResourceGroup
-
-   - **仮想ネットワーク:** ResearchVNet
-
-   - **伝播しない:** はい
-
-   - **ルート テーブルを関連付ける:** 既定
+|設定|値|
+|:----|:----|
+|接続名|ContosoVirtualWAN-to-ResearchVNet|
+|ハブ|ContosoVirtualWANHub-WestUS|
+|サブスクリプション|変更なし|
+|ソース グループ|ContosoResourceGroup|
+|ルーティング構成/「なし」に伝達|はい|
+|ルートテーブルを関連付ける|Default|
 
 5. **「作成」** を選択します。
 
