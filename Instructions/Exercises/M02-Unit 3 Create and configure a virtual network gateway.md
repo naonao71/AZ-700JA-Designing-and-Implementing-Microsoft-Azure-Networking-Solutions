@@ -62,7 +62,7 @@ Exercise:
    | ディスク           | 変更は必要ありません                                          |                                       |
    | ネットワーキング      | 仮想ネットワーク                                              | CoreServicesVnet                      |
    |                 | サブネット                                                       | DatabaseSubnet (10.20.20.0/24)        |
-   |                 | パブリック IP                                                    | (新しい) CoreServicesTestVM-ip           |
+   |                 | パブリック IP                                                    | (新規) CoreServicesTestVM-ip           |
    |                 | NIC ネットワーク セキュリティ グループ                                   | Basic                                 |
    |                 | パブリック受信ポート                                         | 選択したポートを許可する                  |
    |                 | 受信ポートの選択                                         | RDP (3389)                            |
@@ -98,7 +98,7 @@ Exercise:
    | ディスク           | 変更は必要ありません                                          |                                           |
    | ネットワーキング      | 仮想ネットワーク                                              | ManufacturingVnet                         |
    |                 | サブネット                                                       | ManufacturingSystemSubnet (10.30.10.0/24) |
-   |                 | パブリック IP                                                    | (新しい) ManufacturingTestVM-ip              |
+   |                 | パブリック IP                                                    | (新規) ManufacturingTestVM-ip              |
    |                 | NIC ネットワーク セキュリティ グループ                                   | Basic                                     |
    |                 | パブリック受信ポート                                         | 選択したポートを許可する                      |
    |                 | 受信ポートの選択                                         | RDP (3389)                                |
