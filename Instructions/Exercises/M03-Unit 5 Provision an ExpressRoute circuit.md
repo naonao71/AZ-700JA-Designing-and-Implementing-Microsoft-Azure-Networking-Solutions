@@ -70,7 +70,7 @@ Exercise:
 
 1. 左側のメニューで **「すべてのサービス」 > 「ネットワーク」 > 「ExpressRoute 回線」** を選択すると、作成したすべての回線を表示できます。
 
-   ![Azure portal - ExpressRoute リソースの作成メニュー](../media/expressroute-circuit-menu.png)
+ <!--   ![Azure portal - ExpressRoute リソースの作成メニュー](../media/expressroute-circuit-menu.png)　-->
 
 2. サブスクリプション内で作成されたすべての ExpressRoute 回線がここに表示されます。 
 
