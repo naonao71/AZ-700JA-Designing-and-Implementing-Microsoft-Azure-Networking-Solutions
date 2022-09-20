@@ -87,23 +87,23 @@ Exercise:
         - プロバイダーの状態: 未プロビジョニング
         - 回線の状態: Enabled
    - 回線は、接続プロバイダーが有効にしている間、次の状態に変化します。
-     - プロバイダーの状態: プロビジョニング
+     - プロバイダーの状態: プロビジョニング中
      - 回線の状態: Enabled
    - ExpressRoute 回線を使用するには、次の状態になっている必要があります。
-     - プロバイダーの状態: Provisioned
+     - プロバイダーの状態: プロビジョニング済み
      - 回線の状態: Enabled
    - プロビジョニングの状態と回線ステータスの状態を定期的に確認する必要があります。
 
-![Azure portal - 状態がプロビジョニング済みであることを示す ExpressRoute 回線のプロパティ](../media/provisioned.png)
+ <!-- ![Azure portal - 状態がプロビジョニング済みであることを示す ExpressRoute 回線のプロパティ](../media/provisioned.png)
 
- 
 ExpressRoute 回線を作成およびプロビジョニングする方法のこのデモをご覧ください。[Azure ExpressRoute - ExpressRoute 回線の作成方法 | Azure | Channel 9 (msdn.com)](https://channel9.msdn.com/Blogs/Azure/Azure-ExpressRoute-How-to-create-an-ExpressRoute-circuit?term=ExpressRoute&lang-en=true&pageSize=15&skip=15)。 
+-->
 
 お疲れさまでした! ExpressRoute 回線を作成し、回線のプロビジョニングを完了するために必要なサービス キーを見つけました。
 
 ## タスク 3: ExpressRoute 回線のプロビジョニング解除
 
-ExpressRoute 回線サービス プロバイダーのプロビジョニング状態が**プロビジョニング中**または**プロビジョニング済み**の場合、サービス プロバイダー側の回線のプロビジョニングを解除するには、サービス プロバイダーに連絡する必要があります。Microsoft は、サービス プロバイダーが回線のプロビジョニング解除を完了し、通知するまで、リソースの予約と課金を続行します。
+ExpressRoute 回線サービス プロバイダーのプロビジョニング状態が **プロビジョニング中** または **プロビジョニング済み** の場合、サービス プロバイダー側の回線のプロビジョニングを解除するには、サービス プロバイダーに連絡する必要があります。Microsoft は、サービス プロバイダーが回線のプロビジョニング解除を完了し、通知するまで、リソースの予約と課金を続行します。
 
 > [!注]
 >
