@@ -55,19 +55,19 @@ Exercise:
 
 > [!重要]
 >
-> ピアリングの場所は、Microsoft とピアリングしている[物理的な場所](https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-locations)を示します。この場所は "Location" プロパティにリンクされていません。それは、Azure Network Resource Provider が配置されている地理的な場所を参照します。それらは関連付けられていませんが、回路のピアリングの場所と地理的に近い場所にある Network Resource Provider を選択することをお勧めします。
+> ピアリングの場所は、Microsoft とピアリングしている[物理的な場所](https://docs.microsoft.com/ja-jp/azure/expressroute/expressroute-locations)を示します。この場所は "Location" プロパティにリンクされていません。それは、Azure Network Resource Provider が配置されている地理的な場所を参照します。それらは関連付けられていませんが、回線のピアリングの場所と地理的に近い場所にある Network Resource Provider を選択することをお勧めします。
 
-- 「**SKU**」によって、ExpressRoute Local、ExpressRoute Standard、または ExpressRoute Premium のどのアドオンを有効にするかが決まります。ローカルの SKU を取得する場合は「**Local**」、標準の SKU を取得する場合は「**Standard**」、Premium アドオンの場合は「**Premium**」を指定できます。SKU を変更し、プレミアム アドオンを有効にすることができます。
+- 「**SKU**」によって、ExpressRoute Local、ExpressRoute Standard、または ExpressRoute Premium のどのアドオンを有効にするかが決まります。ローカルの SKU を取得する場合は「**ローカル**」、標準の SKU を取得する場合は「**Standard**」、Premium アドオンの場合は「**Premium**」を指定できます。SKU を変更し、プレミアム アドオンを有効にすることができます。
 
 > [!重要]
 >
 > SKU を「Standard」または「Premium」から「Local」に変更することはできません。
 
-- 「**課金モデル**」により、課金の種類が決まります。従量制課金データ プランの場合は「**従量制**」を、無制限データ プランの場合は「**無制限**」を指定できます。課金の種類を「**従量制**」から「**無制限**」に変更することができます。
+- 「**課金モデル**」により、課金の種類が決まります。従量制課金データ プランの場合は「**従量制課金**」を、無制限データ プランの場合は「**無制限**」を指定できます。課金の種類を「**従量制課金**」から「**無制限**」に変更することができます。
 
 > [!重要]
 >
-> 種類を「無制限」から「従量制」に変更することはできません。
+> 種類を「無制限」から「従量制課金」に変更することはできません。
 
 - 「**クラシック操作を許可する**」により、従来の仮想ネットワークを回線にリンクすることができます。
 
