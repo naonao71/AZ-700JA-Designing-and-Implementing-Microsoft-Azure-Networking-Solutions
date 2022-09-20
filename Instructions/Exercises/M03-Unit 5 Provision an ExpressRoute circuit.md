@@ -34,7 +34,13 @@ Exercise:
 
  <!--  ![Azure portal - ExpressRoute 回線の作成メニュー](../media/create-expressroute-circuit-menu.png) -->
 
-3. 「**ExpressRoute circuits の作成**」ページで、回線の**リソース グループ**、**リージョン**、**名前**を次のように指定します。ExpressRouteResourceGroup、East US 2、TestERCircuit。次に、「**次: Configuration >**」を選択します。
+3. 「**ExpressRoute circuits の作成**」の基本ページを次のように指定し、「**次: Configuration >**」を選択します。
+
+|設定|値|
+|:----|:----|
+|リソースグループ|ExpressRouteResourceGroup|
+|リージョン|East US 2|
+|名前|TestERCircuit|
 
 4. このページで値を入力するときは、正しい SKU レベル (Local、Standard、または Premium) とデータ計測課金モデル (無制限または従量制) を必ず指定してください。
 
