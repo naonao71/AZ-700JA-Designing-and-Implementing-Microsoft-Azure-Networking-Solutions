@@ -42,7 +42,7 @@ Exercise:
 |リージョン|East US 2|
 |名前|TestERCircuit|
 
-4. このページで値を入力するときは、正しい SKU レベル (Local、Standard、または Premium) とデータ計測課金モデル (無制限または従量制) を必ず指定してください。
+4. このページで値を入力するときは、正しい SKU レベル (ローカル、Standard、または Premium) とデータ計測課金モデル (無制限または従量制課金) を必ず指定してください。
 
 ![Azure portal - ExpressRoute 構成タブを作成する](../media/expressroute-create-configuration.png)
 
