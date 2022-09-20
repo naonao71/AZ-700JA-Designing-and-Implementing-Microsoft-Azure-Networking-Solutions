@@ -30,7 +30,7 @@ Exercise:
    >
    > ExpressRoute 回線の課金は、サービス キーが発行されたときから始まります。接続プロバイダーが回線をプロビジョニングする準備ができたら、この操作を実行します。
 
-2. Azure portal のメニューで、「**+ リソースの作成**」を選択します。次の図に示すように、「**ネットワーク**」を選択してから、「**ExpressRoute circuits**」を選択します。ExpressRoute circuits がリストに表示されない場合は、「**マーケットプレイスの検索**」を使用して検索します。
+2. Azure portal のメニューで、「**検索ウィンドウ**」に「**ExpressRoute circuits**」を入力して選択します。
 
  <!--  ![Azure portal - ExpressRoute 回線の作成メニュー](../media/create-expressroute-circuit-menu.png) -->
 
