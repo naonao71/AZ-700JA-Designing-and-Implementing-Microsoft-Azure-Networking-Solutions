@@ -32,7 +32,7 @@ Exercise:
 
 2. Azure portal のメニューで、「**+ リソースの作成**」を選択します。次の図に示すように、「**ネットワーク**」を選択してから、「**ExpressRoute circuits**」を選択します。ExpressRoute circuits がリストに表示されない場合は、「**マーケットプレイスの検索**」を使用して検索します。
 
-   ![Azure portal - ExpressRoute 回線の作成メニュー](../media/create-expressroute-circuit-menu.png)
+ <!--  ![Azure portal - ExpressRoute 回線の作成メニュー](../media/create-expressroute-circuit-menu.png) -->
 
 3. 「**ExpressRoute circuits の作成**」ページで、回線の**リソース グループ**、**リージョン**、**名前**を次のように指定します。ExpressRouteResourceGroup、East US 2、TestERCircuit。次に、「**次: Configuration >**」を選択します。
 
