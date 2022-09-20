@@ -9,8 +9,8 @@ Exercise:
 
 ![図: 演習用の ExpressRoute 回路レイアウト](../media/environment-diagram.png)
 
-ExpressRoute 回線を作成する方法のデモを見るには、[Azure ExpressRoute - ExpressRoute 回線を作成する方法](https://channel9.msdn.com/Blogs/Azure/Azure-ExpressRoute-How-to-create-an-ExpressRoute-circuit?term=ExpressRoute&lang-en=true&pageSize=15&skip=15)を参照してください[ | Azure | Channel 9 (msdn.com)](https://channel9.msdn.com/Blogs/Azure/Azure-ExpressRoute-How-to-create-an-ExpressRoute-circuit?term=ExpressRoute&lang-en=true&pageSize=15&skip=15)。
-
+<!-- ExpressRoute 回線を作成する方法のデモを見るには、[Azure ExpressRoute - ExpressRoute 回線を作成する方法](https://channel9.msdn.com/Blogs/Azure/Azure-ExpressRoute-How-to-create-an-ExpressRoute-circuit?term=ExpressRoute&lang-en=true&pageSize=15&skip=15)を参照してください[ | Azure | Channel 9 (msdn.com)](https://channel9.msdn.com/Blogs/Azure/Azure-ExpressRoute-How-to-create-an-ExpressRoute-circuit?term=ExpressRoute&lang-en=true&pageSize=15&skip=15)。
+-->
 
 この演習では、次のことを行います。
 
