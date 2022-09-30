@@ -88,12 +88,10 @@ Exercise:
    ```powershell
    $RGName = "IntLB-RG"
    
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm1.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm2.json
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm3.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm1.json -AsJob
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm2.json -AsJob
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm3.json -AsJob
    ```
-> コマンドでの実行に失敗する場合は、**カスタム テンプレートからのデプロイ**から、**「エディターで独自のテンプレートを作成する」** を選択し、ファイルの読み込みから、「azuredeploy.json.json」を選択して保存します。その後、「パラメータの編集」をクリックし、「azuredeploy.parameters.vm1.json」を選択して保存します。パラメーターを確認して空白があればそれを補完し、デプロイを行います。同様の操作をazuredeploy.parameters.vm2.json、azuredeploy.parameters.vm3.json ファイルに対して行います。
-
 ## タスク 3: ロード バランサーを作成する
 
 このセクションでは、内部 Standard SKU ロード バランサーを作成します。この演習で、Basic SKU ロード バランサーの代わりに Standard SKU ロード バランサーを作成する理由は、ロードバランサーの Standard SKU バージョンを必要とする後の演習のためです。
