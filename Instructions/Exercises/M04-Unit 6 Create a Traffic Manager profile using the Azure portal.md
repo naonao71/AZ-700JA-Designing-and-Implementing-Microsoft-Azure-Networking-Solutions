@@ -156,7 +156,9 @@ Exercise:
 
 3. Web ブラウザータブを開き、**DNS 名**エントリ (contoso-tmprofile.trafficmanager.net) をアドレス バーに貼り付け (または入力し)、Enter キーを押します。
 
-4. Web アプリの既定の　Web　サイトが表示されます。
+4. Web アプリの既定の Web サイトが表示されます。"404 Web サイトが見つかりません" というメッセージが表示された場合は、Contoso-TMProfilexx Traffic Manager のプロファイルの概要ページからプロファイルを無効化し、プロファイルを有効化します。その後、Web ページを更新します。
+
+  > プロファイルの有効化を行っても改善しない場合は、しばらく時間をあけてから再度実行します。
 
    ![図 24](../media/tm-webapp-test-1a.png)
 
