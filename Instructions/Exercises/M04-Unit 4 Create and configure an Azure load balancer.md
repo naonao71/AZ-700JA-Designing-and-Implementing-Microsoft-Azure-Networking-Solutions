@@ -83,7 +83,7 @@ Exercise:
 - azuredeploy.parameters.vm2.json
 - azuredeploy.parameters.vm3.json
 
-ファイルを Cloud Shell のホーム ディレクトリにアップロード配置します。
+ ファイルを Cloud Shell のホーム ディレクトリにアップロード配置します。
 
 3. 次の ARM テンプレートをデプロイして、この演習に必要な仮想ネットワーク、サブネット、VM を作成します。
 
