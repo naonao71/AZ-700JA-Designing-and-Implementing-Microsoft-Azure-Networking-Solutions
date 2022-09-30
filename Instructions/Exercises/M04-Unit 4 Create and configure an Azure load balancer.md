@@ -77,13 +77,11 @@ Exercise:
 
 1. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
 
-2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、
-- azuredeploy.json
+2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、下記ファイルを Cloud Shell のホーム ディレクトリにアップロード配置します。
+- azuredeploy.json.json
 - azuredeploy.parameters.vm1.json
 - azuredeploy.parameters.vm2.json
 - azuredeploy.parameters.vm3.json
-
-　ファイルを Cloud Shell のホーム ディレクトリにアップロード配置します。
 
 3. 次の ARM テンプレートをデプロイして、この演習に必要な仮想ネットワーク、サブネット、VM を作成します。
 
