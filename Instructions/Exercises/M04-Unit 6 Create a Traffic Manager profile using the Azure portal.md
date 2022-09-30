@@ -71,7 +71,9 @@ Exercise:
 9. 2 つの新しい Web アプリが一覧表示されます。
 
    ![図 19](../media/create-web-app-2.png)
-
+   
+10. **ContosoWebAppEastUSxx** を選択し、設定セクションの「TLS/SSL の設定」をクリックします。**プロトコル設定** で **「HTTPのみ」** を **オフ** にします。
+11. 同様の設定を、**ContosoWebAppWestEuropexx** に行います。
  
 
 ## タスク 2: Traffic Manager プロファイルの作成
