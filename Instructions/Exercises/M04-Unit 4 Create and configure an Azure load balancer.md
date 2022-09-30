@@ -13,7 +13,7 @@ Exercise:
 
 次の図は、この演習でデプロイする環境を示しています。
 
-<!-- ![内部標準ロード バランサーの図](../media/exercise-internal-standard-load-balancer-environment-diagram.png)-->
+![内部標準ロード バランサーの図](../media/exercise-internal-standard-load-balancer-environment-diagram.png)
 
  
 この演習では、次のことを行います。
@@ -32,7 +32,7 @@ Exercise:
 
 2. Azure portal の「ホーム」ページで、「グローバル検索」バーに移動して、「**Virtual Networks**」を検索し、サービスの下で、仮想ネットワークを選択します。 <!--  ![Azure portal の「ホーム」ページの「グローバル検索」バーで、仮想ネットワークを検索した結果。](../media/global-search-bar.PNG)-->
 
-3. 「Virtual Network」ページで、「**作成**」を選択します。  ![仮想ネットワークの作成ウィザード。](../media/create-virtual-network.png)
+3. 「Virtual Network」ページで、「**作成**」を選択します。 <!-- ![仮想ネットワークの作成ウィザード。](../media/create-virtual-network.png)-->
 
 4. **「基本」** タブで、次の表の情報を使用して仮想ネットワークを作成します。
 
