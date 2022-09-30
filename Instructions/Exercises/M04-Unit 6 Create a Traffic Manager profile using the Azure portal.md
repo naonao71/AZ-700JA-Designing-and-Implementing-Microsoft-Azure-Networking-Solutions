@@ -174,7 +174,7 @@ Exercise:
 
 9. 「**myPrimaryEndpoint**」ページを閉じます (ページの右上隅にある「**X**」をクリックします)。
 
-10. 「**Contoso-TMProfile**」ページで、「**myPrimaryEndpoint**」の「**監視状態**」が「**無効**」になっているはずです。
+10. 「**Contoso-TMProfile**」ページで、「**myPrimaryEndpoint**」の「**モニターの状態**」が「**無効**」になっているはずです。
 
 11. 新しい Web ブラウザータブを開き、**DNS 名**エントリ (contoso-tmprofile.trafficmanager.net) をアドレス バーに貼り付け (または入力し)、Enter キーを押します。
 
