@@ -161,8 +161,8 @@ Azure が Application Gateway を作成するのに数分かかる場合があ�
    | 仮想ネットワーク      | ContosoVnet                                      |
    | サブネット               | BackendSubnet (10.0.1.0/24)                      |
    | パブリックIP            | なし                      |
-   | **管理**       |                                                  |
-   | ブート診断     | 無効化                                          |
+   | **Monitoring**       |                                                  |
+   | Diagnostics     | 	Disable                                         |
 
 4. 他の既定値をそのまま使用し、「**確認および作成**」を選択します。
 
