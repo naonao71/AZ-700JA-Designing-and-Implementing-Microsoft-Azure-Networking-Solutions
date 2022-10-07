@@ -26,7 +26,7 @@ Exercise:
 1. Azure アカウントを使用して [Azure portal](https://portal.azure.com/) にサインインします。
 
 2. Azure portal ページの「**リソース、サービス、ドキュメントの検索 (G+/)**」で、アプリケーションゲートウェイと入力し、結果から「**アプリケーションゲートウェイ**」を選択します。
-    ![Azure portal でアプリケーションゲートウェイを検索する](../media/search-application-gateway.png)    
+<!--    ![Azure portal でアプリケーションゲートウェイを検索する](../media/search-application-gateway.png)   --> 
 
 3. 「アプリケーションゲートウェイ」ページで、「**+ 作成**」を選択します。
 
