@@ -84,13 +84,13 @@ Exercise:
 
 13. 「**次へ: 確認および作成」を選択します。**
 
+    ![セキュリティで保護された仮想ハブを作成する - Review + create タブ](../media/create-new-secured-virtual-hub-2.png)
+
 14. 「**作成**」をクリックします。
 
     > **[!注]** 
     >
     > デプロイするまで最大 30 分かかることがあります。
-
-    ![セキュリティで保護された仮想ハブを作成する - Review + create タブ](../media/create-new-secured-virtual-hub-2.png)
 
 15. デプロイが完了したら、Azure portal のホーム ページから、「**すべてのサービス**」をクリックします。
 
