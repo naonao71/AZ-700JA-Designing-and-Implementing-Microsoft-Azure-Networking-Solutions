@@ -37,7 +37,7 @@ Contoso のネットワーク セキュリティ チームの一員である次�
 
 5. 「**リージョン**」で、一覧からリージョンを選択します。
 
-   ![Azure ファイアウォールのリソース グループを作成します。](../media/create-resource-group-for-azure-firewall.png)
+<!--   ![Azure ファイアウォールのリソース グループを作成します。](../media/create-resource-group-for-azure-firewall.png) -->
 
 6. 「**確認および作成**」をクリックします。
 
@@ -57,7 +57,7 @@ Contoso のネットワーク セキュリティ チームの一員である次�
 
 4. 「**名前**」ボックスに、「**Test-FW-VN**」を入力します。
 
-   ![仮想ネットワークを作成する - 基本タブ](../media/create-vnet-basics-for-azure-firewall.png)
+<!--   ![仮想ネットワークを作成する - 基本タブ](../media/create-vnet-basics-for-azure-firewall.png) -->
 
 5. 「**次へ: IP アドレス**」をクリックします。既定でまだ入力されていない場合は、IPv4 アドレス スペース 10.0.0.0/16 を入力します。 
 
