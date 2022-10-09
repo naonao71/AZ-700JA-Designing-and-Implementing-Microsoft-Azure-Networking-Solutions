@@ -353,23 +353,13 @@ Exercise:
 
 6. 「**資格情報の入力**」ダイアログ ボックスで、パスワード **TestPa$$w0rd!** を使用して、**Srv-workload-01** サーバー仮想マシンにログインします。
 
-7. 「**OK**」をクリックします。
-
-8. 証明書メッセージで「**はい**」をクリックします。
-
-9. Microsoft Edge を開き、「**Welcome**」ダイアログボックスで「**Start without your data**」をクリックします。
-
-10. **https://www.microsoft.com** を参照します。
-
-11. 「**セキュリティの警告**」ダイアログ ボックスで、「**OK**」をクリックします。
-
-12. ポップアップする可能性のある Internet Explorer のセキュリティ アラートで「**閉じる**」をクリックします。
+9. Microsoft Edge を開き、**www.microsoft.com** を参照します。
 
 13. Microsoft のホーム ページが表示されるはずです。
 
     ![microsoft.com を参照する RDP セッション](../media/microsoft-home-page.png)
 
-14. **https://www.google.com** を参照します。
+14. **www.google.com** を参照します。
 
 15. ファイアウォールでブロックされるはずです。
 
