@@ -53,7 +53,7 @@ Contoso のネットワーク セキュリティチームを担当し、仮想�
 
 4. 「**インスタンス名**」ボックスに「**MyDdoSProtectionPlan**」と入力し、「**地域**」で、**「(Europe）West Europe」** を選択します。「**確認および作成**」をクリックします。 
 
-   ![DDoS Protection プランを作成する](../media/create-ddos-protection-plan-new.png)
+<!--   ![DDoS Protection プランを作成する](../media/create-ddos-protection-plan-new.png) -->
 
 5. 「**作成**」をクリックします。
 
