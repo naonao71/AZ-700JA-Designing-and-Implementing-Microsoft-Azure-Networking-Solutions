@@ -308,13 +308,13 @@ Exercise:
 3. **Policy-01** のチェックボックスを選択します。
 4. メニューの **「Manage associations」 &gt; 「ハブの関連付け」** を選択します。
 
-![ハブに関連するファイアウォール ポリシーを表示する](../media/associate-firewall-policy-with-hub-end-1.png)
+   ![ハブに関連するファイアウォール ポリシーを表示する](../media/associate-firewall-policy-with-hub-end-1.png)
 
 6. **Hub-01** のチェックボックスを選択します。
 7. 「**追加**」をクリックします。
 8. ポリシーが添付されたら、「**更新**」をクリックします。関連付けが表示されます。
 
-![ハブに関連するファイアウォール ポリシーを表示する](../media/associate-firewall-policy-with-hub-end-2.png)
+   ![ハブに関連するファイアウォール ポリシーを表示する](../media/associate-firewall-policy-with-hub-end-2.png)
 
  
 
