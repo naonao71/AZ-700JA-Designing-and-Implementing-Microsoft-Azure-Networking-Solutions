@@ -381,13 +381,13 @@ Contoso のネットワーク セキュリティ チームの一員である次�
 
 5. パスワード **TestPa$$w0rd!** を使用して、**Srv-Work** サーバー仮想マシンにログインします。
 
-8. Microsoft Edge を開き、**https://www.google.com** を参照します。
+8. Microsoft Edge を開き、**www.google.com** を参照します。
 
 11. Google のホーム ページが表示されます。
 
     ![Srv-work サーバーでの RDP セッション - google.com のブラウザー](../media/remote-desktop-connection-2.png)
 
-12. **https://www.microsoft.com** を参照します。
+12. **www.microsoft.com** を参照します。
 
 13. ファイアウォールでブロックされるはずです。
 
