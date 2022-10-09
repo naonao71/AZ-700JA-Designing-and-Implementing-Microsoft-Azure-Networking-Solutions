@@ -71,7 +71,7 @@ Contoso のネットワーク セキュリティチームを担当し、仮想�
 
 3. 「**基本**」タブで、前に作成したリソース グループを選択します。
 
-4. 「**名前**」ボックスに「**MyVirtualNetwork**」と入力し、「**セキュリティ**」タブをクリックします。 
+4. 「**名前**」ボックスに「**MyVirtualNetwork**」と入力し、「**地域**」で、**「(Europe）West Europe」** を選択します。「**セキュリティ**」タブをクリックします。 
 
    ![仮想ネットワークを作成する - 基本タブ](../media/create-virtual-network-basics-for-ddos-protection.png)
 
