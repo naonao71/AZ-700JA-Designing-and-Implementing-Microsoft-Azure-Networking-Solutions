@@ -102,7 +102,7 @@ Contoso のネットワーク セキュリティ チームの一員である次�
    | サブスクリプション         | サブスクリプションを選択します                                     |
    | リソース グループ       | **Test-FW-RG**                                               |
    | 仮想マシン名 | **Srv-Work**                                                 |
-   | リージョン               | 自分のリージョン                                                  |
+   | リージョン               | (Europe）West Europe                                                 |
    | 可用性オプション | **インフラストラクチャの冗長性は必要ありません**                    |
    | イメージ                | **Windows Server 2022 Datacenter- Gen2**                     |
    | サイズ                 | **Standard_D2s_v3** - 2vcpus、8GiB メモリ                    |
@@ -113,7 +113,7 @@ Contoso のネットワーク セキュリティ チームの一員である次�
 
 > サブスクリプションの制限により、Standard_D2s_v3 が選択できない場合は、選択可能なサイズを選択してください。
 
-   ![仮想マシンを作成する - 基本タブ](../media/create-vm-for-azure-firewall-test-basics.png)
+ <!--  ![仮想マシンを作成する - 基本タブ](../media/create-vm-for-azure-firewall-test-basics.png) -->
 
 4. 「**次へ : ディスク**」をクリックします。
 
