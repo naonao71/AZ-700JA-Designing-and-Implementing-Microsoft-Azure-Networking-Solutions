@@ -65,7 +65,7 @@ Contoso のネットワーク セキュリティチームを担当し、仮想�
 
 1. Azure portal のホーム ページで「**リソースの作成**」を選択し、検索ボックスに「**仮想ネットワーク**」と入力して、表示されたら「**仮想ネットワーク**」をクリックします。
 
-   ![仮想ネットワークを作成するための開始点](../media/create-virtual-network-basics-for-ddos-protection-start.png)
+<!--   ![仮想ネットワークを作成するための開始点](../media/create-virtual-network-basics-for-ddos-protection-start.png) -->
 
 2. 「**仮想ネットワーク**」ページで、「**作成**」をクリックします。
 
