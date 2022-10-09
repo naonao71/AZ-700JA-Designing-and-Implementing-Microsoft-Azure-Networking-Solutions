@@ -192,8 +192,7 @@ Exercise:
 
 このタスクでは、最初にファイアウォール ポリシーを作成し、次にハブを保護します。ファイアウォール ポリシーでは、1 つまたは複数のセキュリティで保護された仮想ハブでトラフィックを転送する規則のコレクションを定義します。
 
-1. Azure portal のホーム ページから、「**Firewall Manager**」をクリックします。
-   - ホーム ページに Firewall Manager アイコンが表示されない場合は、「**すべてのサービス**」をクリックします。次に、検索ボックスに「**firewall manager**」と入力し、表示されたら「**Firewall Manager**」を選択します。
+1. Azure portal のホーム ページで、検索ウインドウに「firewall」と入力して、「**Firewall Manager**」を選択します。
 
 2. **Firewall Manager** の「セキュリティ」セクションの、「**Azure Firewall ポリシー**」をクリックします。
 
