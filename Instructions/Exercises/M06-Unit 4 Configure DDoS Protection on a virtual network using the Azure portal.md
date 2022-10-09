@@ -33,7 +33,7 @@ Contoso のネットワーク セキュリティチームを担当し、仮想�
 
    ![リソース グループの作成](../media/create-resource-group-ddos-protection-plan.png)
 
-5. 「**リージョン**」で、一覧からリージョンを選択します。
+5. 「**リージョン**」で、**「(Europe）West Europe」** 一覧からリージョンを選択します。
 
 6. 「**確認および作成**」をクリックします。
 
@@ -51,7 +51,7 @@ Contoso のネットワーク セキュリティチームを担当し、仮想�
 
 3. 「**基本**」タブの「**リソース グループ**」リストで、作成したリソース グループを選択します。
 
-4. 「**インスタンス名**」ボックスに「**MyDdoSProtectionPlan**」と入力し、「**確認および作成**」をクリックします。 
+4. 「**インスタンス名**」ボックスに「**MyDdoSProtectionPlan**」と入力し、「**地域**」で、**「(Europe）West Europe」** を選択します。「**確認および作成**」をクリックします。 
 
    ![DDoS Protection プランを作成する](../media/create-ddos-protection-plan-new.png)
 
