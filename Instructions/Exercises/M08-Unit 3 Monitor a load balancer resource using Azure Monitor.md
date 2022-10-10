@@ -43,7 +43,7 @@ Exercise:
 
 3. **「+ 作成」** をクリックします。
 
-   ![仮想ネットワークの作成](../media/create-virtual-network-1.png)
+<!--   ![仮想ネットワークの作成](../media/create-virtual-network-1.png) -->
 
 4. 「**基本**」タブで、次の表の情報を使用して仮想ネットワークを作成します。
 
