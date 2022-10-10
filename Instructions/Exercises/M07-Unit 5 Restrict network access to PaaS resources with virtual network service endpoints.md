@@ -309,13 +309,17 @@ VM のデプロイには数分かかります。作成が完了して設定が�
 
 ## タスク 10: ストレージ アカウントへのアクセスを確認する
 
+<--!
 1. ContosoEastPrivate VM の作成が完了したら、「リソースに移動」を選択して VM のブレードを開きます。「接続」ボタンを選択してから、「RDP」を選択します。
    ![グラフィカル ユーザー インターフェイス、アプリケーション 自動的に生成された説明](../media/private-virtual-machine-connect.png)
 2. 「接続」ボタンと RDP を選択した後、「RDP ファイルのダウンロード」ボタンを選択します。リモート デスクトップ プロトコル (.rdp) ファイルが作成され、お使いのコンピューターにダウンロードされます。
 3. ダウンロードされた rdp ファイルを開きます。メッセージが表示されたら、「接続」 を選択します。VM の作成時に指定したユーザー名とパスワードを入力します。VM 作成時に入力した資格情報を指定するには、その他を選択してから、別のアカウントを使用する を選択する必要があります。
 4. 「**OK**」を選択します。
 5. サインイン プロセス中に証明書の警告が表示されることがあります。警告が表示されたら、「はい」または「続行」を選択して接続処理を続行します。
-6. ContosoEastPrivate VM で、PowerShell を使って、Azure ファイル共有を Z ドライブにマップします。以下のコマンドを実行する前に、<storage-account-key>、<storage-account-name> (例: contosostoragewestxx)、my-file-share (例: marketing) を、ストレージ アカウントを作成する タスクで指定および取得した値に置き換えてください。
+-->
+1. Virtual Machines の ContosoEastPrivate に RDP で接続します。
+
+7. ContosoEastPrivate VM で、PowerShell を使って、Azure ファイル共有を Z ドライブにマップします。以下のコマンドを実行する前に、<storage-account-key>、<storage-account-name> (例: contosostoragewestxx)、my-file-share (例: marketing) を、ストレージ アカウントを作成する タスクで指定および取得した値に置き換えてください。
 
 ```Azure CLI
 $acctKey = ConvertTo-SecureString -String "<storage-account-key>" -AsPlainText -Force
