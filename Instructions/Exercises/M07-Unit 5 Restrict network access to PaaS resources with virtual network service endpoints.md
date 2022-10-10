@@ -175,7 +175,7 @@ Exercise:
    | ソース ポート範囲      | *                         |
    | 宛先             | **Service Tag**を選びます    |
    | 宛先サービス タグ          | **VirtualNetwork** を選びます |
-   | Service                 | Custom                      |
+   | サービス                  | Custom                      |
    | 宛先ポート範囲 | 3389                      |
    | プロトコル                | Any                     |
    | アクション                  | 許可                     |
