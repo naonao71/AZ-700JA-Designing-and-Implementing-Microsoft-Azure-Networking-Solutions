@@ -54,7 +54,7 @@ New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile template.json -TemplateParameterFile parameters.json
    ```
-  > parameters.json ファイルのパラメーターを変更しないと、デプロイが失敗します。
+  > parameters.json ファイルのパラメーターを変更しないと、デプロイが失敗します。**GEN-UNIQUE 文字列を Web アプリ名の一意の値に置き換えます**。location は "value": "westus" になっていますので、リソースグループと同じにするなら **"eastus"** に変更します。
 
 ## タスク 2: 仮想ネットワークと bastion ホストの作成
 
