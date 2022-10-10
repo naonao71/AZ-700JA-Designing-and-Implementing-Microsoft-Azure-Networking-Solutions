@@ -18,7 +18,7 @@ Azure Web アプリのプライベート エンドポイントを作成し、仮
 
 - 対象の Azure サブスクリプションにデプロイされている PremiumV2 レベル以上のアプリ サービス プランを持つ Azure Web アプリ。
 
-1. M07 フォルダーで parameters.json を見つけて開きます。メモ帳で開き、"value": "GEN-UNIQUE" という行を見つけます。プレースホルダーの GEN-UNIQUE 文字列を Web アプリ名の一意の値に置き換えます。location は "value": "westus" になっていますので、リソースグループと同じにするなら "eastus"に変更します。変更内容を保存します｡
+1. M07 フォルダーで parameters.json を見つけて開きます。メモ帳で開き、"value": "GEN-UNIQUE" という行を見つけます。プレースホルダーの **GEN-UNIQUE 文字列を Web アプリ名の一意の値に置き換えます**。location は "value": "westus" になっていますので、リソースグループと同じにするなら **"eastus"** に変更します。変更内容を保存します｡
 
 2. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
 
@@ -54,6 +54,7 @@ New-AzResourceGroup -Name 'CreatePrivateEndpointQS-rg' -Location 'eastus'
    
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile template.json -TemplateParameterFile parameters.json
    ```
+  > parameters.json ファイルのパラメーターを変更しないと、デプロイが失敗します。
 
 ## タスク 2: 仮想ネットワークと bastion ホストの作成
 
