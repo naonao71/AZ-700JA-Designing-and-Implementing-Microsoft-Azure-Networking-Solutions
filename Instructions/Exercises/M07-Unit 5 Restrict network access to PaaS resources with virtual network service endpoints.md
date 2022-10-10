@@ -230,7 +230,7 @@ Exercise:
 
   ![グラフィカル ユーザー インターフェイス、アプリケーション 自動的に生成された説明](../media/new-file-share-1.png)
 
-8. 「**接続**」画面の「**Show Script**」ボタンをクリックし、接続スクリプトをコピーして記録しております。
+7. 「**接続**」画面の「**Show Script**」ボタンをクリックし、接続スクリプトをコピーして記録しております。
 
   ![グラフィカル ユーザー インターフェイス、アプリケーション 自動的に生成された説明](../media/new-file-share-2.png)
 
@@ -260,9 +260,11 @@ Exercise:
 
 6. 「**保存**」を選択します。
 
+<!--
 7. ストレージ アカウントの「**セキュリティとネットワーク**」で、「**アクセス キー**」を選択します。
 
 8. 「**キーの表示**」を選択します。「**キー**」の値をメモします。後の手順でファイル共有を VM のドライブ文字にマップするときに、この値を手入力する必要があります。
+-->
 
 ## タスク 9: 仮想マシンを作成する
 
@@ -323,10 +325,7 @@ VM のデプロイには数分かかります。作成が完了して設定が�
 3. ダウンロードされた rdp ファイルを開きます。メッセージが表示されたら、「接続」 を選択します。VM の作成時に指定したユーザー名とパスワードを入力します。VM 作成時に入力した資格情報を指定するには、その他を選択してから、別のアカウントを使用する を選択する必要があります。
 4. 「**OK**」を選択します。
 5. サインイン プロセス中に証明書の警告が表示されることがあります。警告が表示されたら、「はい」または「続行」を選択して接続処理を続行します。
--->
-1. Virtual Machines の ContosoEastPrivate に RDP で接続します。
-
-7. ContosoEastPrivate VM で、PowerShell を使って、Azure ファイル共有を Z ドライブにマップします。以下のコマンドを実行する前に、<storage-account-key>、<storage-account-name> (例: contosostoragewestxx)、my-file-share (例: marketing) を、ストレージ アカウントを作成する タスクで指定および取得した値に置き換えてください。
+6. ContosoEastPrivate VM で、PowerShell を使って、Azure ファイル共有を Z ドライブにマップします。以下のコマンドを実行する前に、<storage-account-key>、<storage-account-name> (例: contosostoragewestxx)、my-file-share (例: marketing) を、ストレージ アカウントを作成する タスクで指定および取得した値に置き換えてください。
 
 ```Azure CLI
 $acctKey = ConvertTo-SecureString -String "<storage-account-key>" -AsPlainText -Force
@@ -335,16 +334,18 @@ $credential = New-Object System.Management.Automation.PSCredential -ArgumentList
 
 New-PSDrive -Name Z -PSProvider FileSystem -Root "\\<storage-account-name>.file.core.windows.net\my-file-share" -Credential $credential
 ```
+-->
 
-Azure ファイル共有は Z ドライブに正常にマップされました。
-
-7. VM にコマンド プロンプトからインターネットへの送信接続がないことを確認します。
+1. Virtual Machines の ContosoEastPrivate に RDP で接続します。
+2. PowerShell を使用して、タスク7で記録したスクリプトを実行します。
+3. Azure ファイル共有は Z ドライブに正常にマップされました。
+4. インターネットへの送信接続がないことを確認します（タスク4でNSGに設定したインターネット送信拒否）。
 ```Azure CLI
  ping bing.com
 ```
-> プライベート サブネットに関連付けられているネットワーク セキュリティ グループは、インターネットへの送信アクセスを許可しないため、返信を受け取ることはありません。
+> Private サブネットに関連付けられている NSG は、インターネットへの送信アクセスを許可しないため、返信を受け取ることはありません。
 
-8. ContosoEastPrivate VM へのリモート デスクトップ セッションを閉じます。
+5. ContosoEastPrivate VM へのリモート デスクトップ セッションを閉じます。
 
 ### ストレージ アカウントへのアクセスが拒否されたことを確認する
 
