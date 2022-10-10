@@ -118,7 +118,7 @@ New-AzBastion @parameters3
 
 - 次のコマンドを使用して、仮想マシンを作成します。
 
-- Get-Credential (注: プロンプトが表示されたら、VM のローカル管理者アカウントの資格情報 (つまり、Student および Pa55w.rd1234) を入力します)。
+- Get-Credential (注: プロンプトが表示されたら、VM のローカル管理者アカウントの資格情報 (例えば、Student および Pa55w.rd1234) を入力します)。
 
 - New-AzNetworkInterface
 
