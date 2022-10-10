@@ -86,7 +86,7 @@ Exercise:
 
 2. **「作成」** をクリックします。
 
-   ![Load Balancer の作成](../media/create-load-balancer-4.png)
+<!--   ![Load Balancer の作成](../media/create-load-balancer-4.png) -->
 
 3. 「**基本**」タブで、次の表の情報を使用して、ロードバランサーを作成します。
 
