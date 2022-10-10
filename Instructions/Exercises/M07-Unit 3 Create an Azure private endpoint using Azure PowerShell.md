@@ -186,13 +186,13 @@ Azure でのアウトバウンド接続の詳細については、アウトバ�
 
 - New-AzPrivateEndpoint
 
-  >  **webapp-resource-group-name** および **webapp-resource-group-name** を置き換えます。
+  >  **webapp-resource-group-name** および **your-webapp-name** を置き換えます。
 
 ```Azure PowerShell
 ## Place web app into variable. Replace <webapp-resource-group-name> with the resource group of your webapp. ##
 
 ## Replace <your-webapp-name> with your webapp name ##
-$webapp = Get-AzWebApp -ResourceGroupName <webapp-resource-group-name> -Name <webapp-resource-group-name>
+$webapp = Get-AzWebApp -ResourceGroupName <webapp-resource-group-name> -Name <your-webapp-name>
 
 ## Create Private Endpoint connection. ##
 $parameters1 = @{
