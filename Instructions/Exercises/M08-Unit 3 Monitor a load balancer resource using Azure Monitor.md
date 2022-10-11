@@ -289,14 +289,18 @@ New-AzLoadBalancer @loadbalancer
 
 1. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
 
-2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次の **azuredeploy.json.json**、**azuredeploy.parameters.vm1.json**、**azuredeploy.parameters.vm2.json**、 **azuredeploy.parameters.vm3.json** ファイルを CloudShell ホーム ディレクトリに保存した **\Allfiles\Exercises\M04** からアップロードします。
-
+2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次の ファイルを CloudShell ホーム ディレクトリに保存した **\Allfiles\Exercises\M04** からアップロードします。
+  - **azuredeploy.json.json**
+  - **azuredeploy.parameters.vm1.json**
+  - **azuredeploy.parameters.vm2.json**
+  - **azuredeploy.parameters.vm3.json**
+ 
 3. 次の ARM テンプレートをデプロイして、この演習に必要な仮想ネットワーク、サブネット、VM を作成します。
 
    ```powershell
    $RGName = "IntLB-RG"
    
-   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm1.json
+   New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm1.json 
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm2.json
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm3.json
    ```
