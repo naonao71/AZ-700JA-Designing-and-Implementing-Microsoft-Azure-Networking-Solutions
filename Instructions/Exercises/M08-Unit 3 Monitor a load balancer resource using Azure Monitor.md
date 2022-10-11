@@ -289,7 +289,7 @@ New-AzLoadBalancer @loadbalancer
 
 1. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
 
-2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次の ファイルを CloudShell ホーム ディレクトリに保存した **\Allfiles\Exercises\M04** からアップロードします。
+2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次のファイルを **\Allfiles\Exercises\M04** からアップロードします。
   - **azuredeploy.json.json**
   - **azuredeploy.parameters.vm1.json**
   - **azuredeploy.parameters.vm2.json**
@@ -332,17 +332,20 @@ New-AzLoadBalancer @loadbalancer
 5. **az700-vm1** ウィンドウが別のブラウザー タブで開きます。
 6. 「**ネットワーク**」ペインが表示されたら、「**はい**」をクリックします。
 7. ウィンドウの左下隅にある「**Windows スタート**」アイコンをクリックしてから、「**Windows PowerShell**」タイルをクリックします。
-8. IIS インストールするには、PowerShell で次のコマンドを実行します。Install-WindowsFeature -name Web-Server -IncludeManagementTools
-9. 既存の既定の Web ホームページを削除するには、Power Shell で次のコマンドを実行します。 Remove-Item C:\inetpub\wwwroot\iisstart.htm
-10. 新しい既定の Web ホーム ページを追加してコンテンツを追加するには、PowerShell で次のコマンドを実行します。Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername) 
-
+8. IIS インストールするには、PowerShell で次のコマンドを実行します。
    ```powershell
    Install-WindowsFeature -name Web-Server -IncludeManagementTools
+   ```   
+9. 既存の既定の Web ホームページを削除するには、Power Shell で次のコマンドを実行します。 
+   ```powershell   
    Remove-Item C:\inetpub\wwwroot\iisstart.htm
-   Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
+   ```     
+10. 新しい既定の Web ホーム ページを追加してコンテンツを追加するには、PowerShell で次のコマンドを実行します。
+   ```powershell
+   Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername) 
    ```
-12. ブラウザー タブを閉じて、**az700-vm1** への Bastion セッションを閉じます。
-13. 上記の手順 1 ~ 11 をさらに 2 回繰り返して、IIS と更新された既定のホーム ページを **az700-vm2** および **az700-vm3** 仮想マシンにインストールします。
+11. ブラウザー タブを閉じて、**az700-vm1** への Bastion セッションを閉じます。
+12. 上記の手順 1 ~ 11 をさらに 2 回繰り返して、IIS と更新された既定のホーム ページを **az700-vm2** および **az700-vm3** 仮想マシンにインストールします。
 
  
 
