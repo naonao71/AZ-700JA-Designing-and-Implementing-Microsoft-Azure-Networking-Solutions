@@ -37,6 +37,43 @@ Exercise:
 
 このセクションでは、仮想ネットワークとサブネットを作成します。
 
+> 時間短縮のため以下の PowerShell コマンドで作成することができます。
+
+```powershell
+$rgName='IntLB-RG'
+$location='westus'
+New-AzResourceGroup -Name $rgname -Location $location
+New-AzVirtualNetwork -Name 'IntLB-VNet' `
+-ResourceGroupName $rgName `
+-Location $location `
+-AddressPrefix '10.1.0.0/16'
+
+$vnet=Get-AzVirtualNetwork -Name IntLB-VNet
+
+Add-AzVirtualNetworkSubnetConfig -Name 'myBackendSubnet' `
+-AddressPrefix '10.1.0.0/24' `
+-VirtualNetwork $vnet
+
+Add-AzVirtualNetworkSubnetConfig -Name "AzureBastionSubnet" `
+-AddressPrefix '10.1.1.0/24' `
+-VirtualNetwork $vnet
+
+$vnet | Set-AzVirtualNetwork
+$publicip = New-AzPublicIpAddress -ResourceGroupName $rgName `
+-name "myBastionIP" `
+-location $location `
+-AllocationMethod Static `
+-Sku Standard
+
+New-AzBastion -ResourceGroupName $rgName `
+-Name "myBastionHost" `
+-PublicIpAddressRgName $rgname `
+-PublicIpAddressName "myBastionIP" `
+-VirtualNetworkRgName $rgName `
+-VirtualNetworkName "IntLB-VNet" `
+-Sku "Standard"
+```
+
 1. Azure portal にログインします。
 
 2. Azure portal の「ホーム」ページで、「**仮想ネットワーク**」を検索し、結果から仮想ネットワークを選択します。
