@@ -305,7 +305,7 @@ New-AzLoadBalancer @loadbalancer
    New-AzResourceGroupDeployment -ResourceGroupName $RGName -TemplateFile azuredeploy.json.json -TemplateParameterFile azuredeploy.parameters.vm3.json -AsJob
    ```
   
-    > **注:** デプロイには数分かかる場合があります。 
+    > **注:** 一行ごとに実行してください。まとめてコピーして実行するとタイミングによっては失敗する場合があります。デプロイには数分かかる場合があります。 
 
 ## タスク 7: バックエンド プールに VM を追加する
 
