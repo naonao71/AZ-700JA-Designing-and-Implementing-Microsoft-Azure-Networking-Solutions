@@ -119,6 +119,67 @@ New-AzBastion -ResourceGroupName $rgName `
 
 このセクションでは、内部 Standard SKU ロード バランサーを作成します。この演習で、Basic SKU ロード バランサーの代わりに Standard SKUロードバランサーを作成する理由は、ロード バランサーの Standard SKU バージョンを必要とする後の演習のためです。
 
+> 時間短縮のためタスク2-5を以下の PowerShell コマンドで作成することができます。
+
+```powershell
+$rgName='IntLB-RG'
+$location='westus'
+
+## Place virtual network created in previous step into a variable. ##
+$net = @{
+    Name = 'IntLB-VNet'
+    ResourceGroupName = $rgName
+}
+$vnet = Get-AzVirtualNetwork @net
+
+## Create load balancer frontend configuration and place in variable. ##
+$lbip = @{
+    Name = 'LoadBalancerFrontEnd'
+    SubnetId = $vnet.subnets[0].Id
+}
+$feip = New-AzLoadBalancerFrontendIpConfig @lbip
+
+## Create backend address pool configuration and place in variable. ##
+$bepool = New-AzLoadBalancerBackendAddressPoolConfig -Name 'myBackendPool'
+
+## Create the health probe and place in variable. ##
+$probe = @{
+    Name = 'myHealthProbe'
+    Protocol = 'http'
+    Port = '80'
+    RequestPath = '/'
+    IntervalInSeconds = '15'
+    ProbeCount = '5'
+}
+$healthprobe = New-AzLoadBalancerProbeConfig @probe
+
+## Create the load balancer rule and place in variable. ##
+$lbrule = @{
+    Name = 'myHTTPRule'
+    Protocol = 'tcp'
+    FrontendPort = '80'
+    BackendPort = '80'
+    IdleTimeoutInMinutes = '15'
+    FrontendIpConfiguration = $feip
+    BackendAddressPool = $bePool
+    probe = $healthprobe
+}
+$rule = New-AzLoadBalancerRuleConfig @lbrule
+
+## Create the load balancer resource. ##
+$loadbalancer = @{
+    ResourceGroupName = $rgName
+    Name = 'myIntLoadBalancer'
+    Location = $location
+    Sku = 'Standard'
+    FrontendIpConfiguration = $feip
+    BackendAddressPool = $bePool
+    LoadBalancingRule = $rule
+    Probe = $healthprobe
+}
+New-AzLoadBalancer @loadbalancer
+```
+
 1. Azure portal の「ホーム」ページ上部の検索ボックスに「**ロード バランサー**」と入力し、サービスの下で、ロード バランサーを選択します。
 
 2. **「作成」** をクリックします。
