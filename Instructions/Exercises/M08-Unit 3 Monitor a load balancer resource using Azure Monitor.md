@@ -341,7 +341,7 @@ New-AzLoadBalancer @loadbalancer
    Remove-Item C:\inetpub\wwwroot\iisstart.htm
    ```     
 10. 新しい既定の Web ホーム ページを追加してコンテンツを追加するには、PowerShell で次のコマンドを実行します。
-   ```powershell   
+   ```powershell
    Add-Content -Path "C:\inetpub\wwwroot\iisstart.htm" -Value $("Hello World from " + $env:computername)
    ```     
 11. ブラウザー タブを閉じて、**az700-vm1** への Bastion セッションを閉じます。
