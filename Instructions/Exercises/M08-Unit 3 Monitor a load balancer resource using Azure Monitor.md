@@ -40,6 +40,7 @@ Exercise:
 <details><summary>時間短縮のため以下の PowerShell コマンドで作成することができます。</summary>
 
 <div>
+    
 ```powershell
 $rgName='IntLB-RG'
 $location='westus'
