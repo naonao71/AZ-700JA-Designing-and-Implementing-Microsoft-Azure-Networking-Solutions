@@ -124,7 +124,9 @@ New-AzBastion -ResourceGroupName $rgName `
 
 このセクションでは、内部 Standard SKU ロード バランサーを作成します。この演習で、Basic SKU ロード バランサーの代わりに Standard SKUロードバランサーを作成する理由は、ロード バランサーの Standard SKU バージョンを必要とする後の演習のためです。
 
-> 時間短縮のためタスク2-5を以下の PowerShell コマンドで作成することができます。
+<details><summary>時間短縮のためタスク2-5を以下の PowerShell コマンドで作成することができます。</summary>
+
+</div>
 
 ```powershell
 $rgName='IntLB-RG'
@@ -184,6 +186,9 @@ $loadbalancer = @{
 }
 New-AzLoadBalancer @loadbalancer
 ```
+
+</div>
+</details>
 
 1. Azure portal の「ホーム」ページ上部の検索ボックスに「**ロード バランサー**」と入力し、サービスの下で、ロード バランサーを選択します。
 
