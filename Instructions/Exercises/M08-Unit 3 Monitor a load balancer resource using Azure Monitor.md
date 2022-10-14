@@ -510,7 +510,7 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $Virt
 ## タスク 12: 詳細なメトリックを表示する
 
 1. このネットワーク リソースのより包括的なメトリックを表示するには、「**詳細なメトリックの表示**」をクリックします。 
-   ![Azure Monitor Network Insights - 強調表示された詳細メトリック ボタンを表示](../media/network-insights-detailedmetrics-1.png)
+<!--   ![Azure Monitor Network Insights - 強調表示された詳細メトリック ボタンを表示](../media/network-insights-detailedmetrics-1.png)-->
 
 2. これにより、Azure Network Insights プラットフォームで大きな完全な**メトリック** ページが開きます。最初に表示されるタブは「**概要**」タブです。このタブには、ロード バランサーの可用性の状態と、ロード バランサーに接続されている各フロントエンド IP の全体的なデータス ループットとフロントエンドおよびバックエンドの可用性が表示されます。これらのメトリックにより、フロントエンド IP が応答可能かどうか、およびバックエンド プール内のコンピューティング インスタンスが着信接続に対して個別に応答可能かどうかが示されます。
    ![Azure Monitor Network Insights - 詳細メトリック ビュー - 概要タブ](../media/network-insights-detailedmetrics-2.png)
