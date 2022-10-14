@@ -37,8 +37,9 @@ Exercise:
 
 このセクションでは、仮想ネットワークとサブネットを作成します。
 
-> 時間短縮のため以下の PowerShell コマンドで作成することができます。
+<details><summary>時間短縮のため以下の PowerShell コマンドで作成することができます。</summary>
 
+<div>
 ```powershell
 $rgName='IntLB-RG'
 $location='westus'
@@ -74,6 +75,9 @@ New-AzBastion -ResourceGroupName $rgName `
 -Sku "Standard"
 ```
 
+</div>
+</details>
+    
 1. Azure portal にログインします。
 
 2. Azure portal の「ホーム」ページで、「**仮想ネットワーク**」を検索し、結果から仮想ネットワークを選択します。
