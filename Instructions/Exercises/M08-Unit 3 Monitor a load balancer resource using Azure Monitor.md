@@ -402,8 +402,8 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $Virt
    | イメージ                | **Windows Server 2022 Datacenter - Gen 2**   |
    | サイズ                 | **Standard_DS1_v2 - 1 vcpu、3.5 GiB メモリ** |
    | ユーザー名             | **TestUser**                                 |
-   | パスワード             | **TestPa$$w0rd!**                            |
-   | パスワードの確認     | **TestPa$$w0rd!**                            |
+   | パスワード             | **TestPa55w0rd!**                            |
+   | パスワードの確認     | **TestPa55w0rd!**                            |
    | 受信ポートの規則（パブリック受信ポート）     | **なし**                            |
 
 3. 「**次へ : ディスク**」をクリックしてから、「**次へ : ネットワーク**」をクリックします。 
@@ -436,7 +436,7 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $Virt
 
 5. 「**Bastion を使用**」をクリックします。
 
-6. 「**ユーザー名**」ボックスに「**TestUser**」と入力し、「**パスワード**」ボックスに「**TestPa$$w0rd!**」と入力して、「**接続**」をクリックします。
+6. 「**ユーザー名**」ボックスに「**TestUser**」と入力し、「**パスワード**」ボックスに「**TestPa55w0rd!**」と入力して、「**接続**」をクリックします。
 
 7. **myTestVM** ウィンドウが別のブラウザー タブで開きます。
 
