@@ -284,57 +284,6 @@ New-AzLoadBalancer @loadbalancer
 
 ## タスク 6: バックエンド サーバーを作成する
 
-```powershell
-### Make VM1 ###
-$VMLocalAdminUser = "TestUser"
-$VMLocalAdminSecurePassword = ConvertTo-SecureString "TestPa55w0rd!" -AsPlainText -Force
-$LocationName = "westus"
-$ResourceGroupName = "IntLB-RG"
-$ComputerName = "az700-vm1"
-$VMName = "az700-vm1"
-$VMSize = "Standard_DS1_v2"
-
-$NetworkName = "IntLB-VNet"
-$NICName = "az700-nic1"
-$SubnetName = "myBackendSubnet"
-
-$Vnet = Get-AzVirtualNetwork -Name $NetworkName -ResourceGroupName $ResourceGroupName
-$NIC = New-AzNetworkInterface -Name $NICName -ResourceGroupName $ResourceGroupName -Location $LocationName -SubnetId $Vnet.Subnets[0].Id
-
-$Credential = New-Object System.Management.Automation.PSCredential ($VMLocalAdminUser, $VMLocalAdminSecurePassword);
-
-$VirtualMachine = New-AzVMConfig -VMName $VMName -VMSize $VMSize
-$VirtualMachine = Set-AzVMOperatingSystem -VM $VirtualMachine -Windows -ComputerName $ComputerName -Credential $Credential -ProvisionVMAgent -EnableAutoUpdate
-$VirtualMachine = Add-AzVMNetworkInterface -VM $VirtualMachine -Id $NIC.Id
-$VirtualMachine = Set-AzVMSourceImage -VM $VirtualMachine -PublisherName 'MicrosoftWindowsServer' -Offer 'WindowsServer' -Skus '2022-datacenter-azure-edition' -Version latest
-
-New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $VirtualMachine
-
-### Make VM2 ###
-$ComputerName = "az700-vm2"
-$VMName = "az700-vm2"
-$NICName = "az700-nic2"
-
-$VirtualMachine = New-AzVMConfig -VMName $VMName -VMSize $VMSize
-$VirtualMachine = Set-AzVMOperatingSystem -VM $VirtualMachine -Windows -ComputerName $ComputerName -Credential $Credential -ProvisionVMAgent -EnableAutoUpdate
-$VirtualMachine = Add-AzVMNetworkInterface -VM $VirtualMachine -Id $NIC.Id
-$VirtualMachine = Set-AzVMSourceImage -VM $VirtualMachine -PublisherName 'MicrosoftWindowsServer' -Offer 'WindowsServer' -Skus '2022-datacenter-azure-edition' -Version latest
-
-New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $VirtualMachine
-
-### Make VM3 ###
-$ComputerName = "az700-vm3"
-$VMName = "az700-vm3"
-$NICName = "az700-nic3"
-
-$VirtualMachine = New-AzVMConfig -VMName $VMName -VMSize $VMSize
-$VirtualMachine = Set-AzVMOperatingSystem -VM $VirtualMachine -Windows -ComputerName $ComputerName -Credential $Credential -ProvisionVMAgent -EnableAutoUpdate
-$VirtualMachine = Add-AzVMNetworkInterface -VM $VirtualMachine -Id $NIC.Id
-$VirtualMachine = Set-AzVMSourceImage -VM $VirtualMachine -PublisherName 'MicrosoftWindowsServer' -Offer 'WindowsServer' -Skus '2022-datacenter-azure-edition' -Version latest
-
-New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $VirtualMachine
-```
-
 このセクションでは、ロード バランサーのバックエンド プール用に同じ可用性セットに含まれる 3 つのVMを作成し、VM をバックエンド プールに追加してから、3 つの VM に IIS をインストールしてロード バランサーをテストします。
 
 1. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
@@ -407,6 +356,37 @@ ARMテンプレートを使用したVMのデプロイでIISは導入済み
 このセクションでは、テスト VM を作成してから、ロード バランサーをテストします。
 
 ### テスト VM を作成する
+
+> 時間短縮のためタスク2-5を以下の PowerShell コマンドで作成することができます。
+
+```powershell
+### Make VM1 ###
+$VMLocalAdminUser = "TestUser"
+$VMLocalAdminSecurePassword = ConvertTo-SecureString "TestPa55w0rd!" -AsPlainText -Force
+$LocationName = "westus"
+$ResourceGroupName = "IntLB-RG"
+$ComputerName = "myTestVM"
+$VMName = "myTestVM"
+$VMSize = "Standard_DS1_v2"
+$nsgname ="myNSG"
+
+$NetworkName = "IntLB-VNet"
+$NICName = "myTestVM-nic1"
+$SubnetName = "myBackendSubnet"
+
+$nsgid = (Get-AzNetworkSecurityGroup -Name $nsgname -ResourceGroupName $ResourceGroupName).id
+$Vnet = Get-AzVirtualNetwork -Name $NetworkName -ResourceGroupName $ResourceGroupName
+$NIC = New-AzNetworkInterface -Name $NICName -ResourceGroupName $ResourceGroupName -Location $LocationName -SubnetId $Vnet.Subnets[0].Id -NetworkSecurityGroupId $nsgid
+
+$Credential = New-Object System.Management.Automation.PSCredential ($VMLocalAdminUser, $VMLocalAdminSecurePassword);
+
+$VirtualMachine = New-AzVMConfig -VMName $VMName -VMSize $VMSize
+$VirtualMachine = Set-AzVMOperatingSystem -VM $VirtualMachine -Windows -ComputerName $ComputerName -Credential $Credential -ProvisionVMAgent -EnableAutoUpdate
+$VirtualMachine = Add-AzVMNetworkInterface -VM $VirtualMachine -Id $NIC.Id
+$VirtualMachine = Set-AzVMSourceImage -VM $VirtualMachine -PublisherName 'MicrosoftWindowsServer' -Offer 'WindowsServer' -Skus '2022-datacenter-azure-edition' -Version latest
+
+New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $VirtualMachine
+```
 
 1. Azure portal の「ホーム」ページで、グローバル検索を使用して、「**Virtual Machines**」と入力し、サービスの下で、仮想マシンを選択します。 
 
