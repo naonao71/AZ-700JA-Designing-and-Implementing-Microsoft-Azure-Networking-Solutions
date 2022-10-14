@@ -457,9 +457,9 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $Virt
 
 ## タスク 10: Log Analytics ワークスペースを作成する
 
-1. Azure portal のホーム ページで「**すべてのサービス**」をクリックし、ページ上部の検索ボックスに「**Log Analytics**」と入力して、フィルター処理された一覧から「**Log Analytics ワークスペース**」を選択します。
+1. Azure portal の「ホーム」ページで、「**Log Analytics**」を検索し、結果から「**Log Analytics ワークスペース**」を選択します。
 
-   ![Azure portal のホーム ページから Log Analytics ワークスペースにアクセスする](../media/log-analytics-workspace-1.png)
+<!-- ![Azure portal のホーム ページから Log Analytics ワークスペースにアクセスする](../media/log-analytics-workspace-1.png)-->
 
 2. 「**作成**」をクリックします。 
 
