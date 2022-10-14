@@ -367,8 +367,10 @@ ARMテンプレートを使用したVMのデプロイでIISは導入済み
 
 ### テスト VM を作成する
 
-> 時間短縮のため「テストVMを作成する」の手順を以下の PowerShell コマンドで実行できます。
+<details><summary>時間短縮のため「テストVMを作成する」の手順を以下の PowerShell コマンドで実行できます。</summary>
 
+<div>
+    
 ```powershell
 ### Make VM1 ###
 $VMLocalAdminUser = "TestUser"
@@ -397,6 +399,10 @@ $VirtualMachine = Set-AzVMSourceImage -VM $VirtualMachine -PublisherName 'Micros
 
 New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $VirtualMachine
 ```
+
+<div>
+
+</details>
 
 1. Azure portal の「ホーム」ページで、グローバル検索を使用して、「**Virtual Machines**」と入力し、サービスの下で、仮想マシンを選択します。 
 
