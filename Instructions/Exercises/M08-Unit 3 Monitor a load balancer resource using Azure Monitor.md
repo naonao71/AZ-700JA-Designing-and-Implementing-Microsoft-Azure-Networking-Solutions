@@ -474,7 +474,7 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $Virt
 
 4. **「確認および作成」** をクリックしてから、**「作成」** をクリックします。
 
-   ![Log Analytics ワークスペースの一覧](../media/log-analytics-workspace-2.png)
+<!-- ![Log Analytics ワークスペースの一覧](../media/log-analytics-workspace-2.png) -->
 
 
 
