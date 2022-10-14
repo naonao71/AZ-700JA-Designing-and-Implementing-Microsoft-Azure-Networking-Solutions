@@ -373,8 +373,11 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $Virt
 
  
 
-## タスク 8: VM に IIS をインストールする
+## タスク 8: VM に IIS をインストールする（カット）
 
+ARMテンプレートを使用したVMのデプロイでIISは導入済み
+
+<!--
 1. Azure portal のホーム ページで、「**すべてのリソース**」をクリックし、リソース一覧から **az700-vm1** をクリックします。
 2. 「**概要**」ページで、「**接続**」、「**Bastion**」の順に選択します。
 3. 「**Bastion を使用**」をクリックします。
@@ -396,7 +399,7 @@ New-AzVM -ResourceGroupName $ResourceGroupName -Location $LocationName -VM $Virt
    ```     
 11. ブラウザー タブを閉じて、**az700-vm1** への Bastion セッションを閉じます。
 12. 上記の手順 1 ~ 11 をさらに 2 回繰り返して、IIS と更新された既定のホーム ページを **az700-vm2** および **az700-vm3** 仮想マシンにインストールします。
-
+-->
  
 
 ## タスク 9: ロード バランサーをテストする
