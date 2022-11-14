@@ -92,7 +92,8 @@ Exercise:
 |接続名|ContosoVirtualWAN-to-ResearchVNet|
 |ハブ|ContosoVirtualWANHub-WestUS|
 |サブスクリプション|変更なし|
-|ソース グループ|ContosoResourceGroup|
+|リソース グループ|ContosoResourceGroup|
+|仮想ネットワーク|ResearchVNet|
 |ルーティング構成/「なし」に伝達|はい|
 |ルートテーブルを関連付ける|Default|
 
