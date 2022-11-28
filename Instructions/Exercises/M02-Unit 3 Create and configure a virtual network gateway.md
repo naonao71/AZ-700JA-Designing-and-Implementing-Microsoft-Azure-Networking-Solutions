@@ -66,7 +66,7 @@ New-AzVirtualNetwork -Name 'ManufacturingVnet' `
 -Location $location `
 -AddressPrefix '10.30.0.0/16'
 
-$vnet=Get-AzVirtualNetwork -Name CoreServicesVnet
+$vnet=Get-AzVirtualNetwork -Name ManufacturingVnet
 
 Add-AzVirtualNetworkSubnetConfig -Name 'ManufacturingSystemSubnet' `
 -AddressPrefix '10.30.10.0/24' `
@@ -96,7 +96,7 @@ New-AzVirtualNetwork -Name 'ResearchVnet' `
 -Location $location `
 -AddressPrefix '10.40.0.0/16'
 
-$vnet=Get-AzVirtualNetwork -Name CoreServicesVnet
+$vnet=Get-AzVirtualNetwork -Name ResearchVnet
 
 Add-AzVirtualNetworkSubnetConfig -Name 'ResearchSystemSubnet' `
 -AddressPrefix '10.40.40.0/24' `
