@@ -84,6 +84,10 @@ Add-AzVirtualNetworkSubnetConfig -Name 'SensorSubnet2' `
 Add-AzVirtualNetworkSubnetConfig -Name 'SensorSubnet3' `
 -AddressPrefix '10.30.22.0/24' `
 -VirtualNetwork $vnet
+    
+Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' `
+-AddressPrefix '10.30.0.0/27' `
+-VirtualNetwork $vnet
 
 $vnet | Set-AzVirtualNetwork
 
