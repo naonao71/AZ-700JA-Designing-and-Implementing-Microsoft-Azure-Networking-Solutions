@@ -51,11 +51,11 @@ Add-AzVirtualNetworkSubnetConfig -Name 'SharedServicesSubnet' `
 -VirtualNetwork $vnet
 
 Add-AzVirtualNetworkSubnetConfig -Name 'DatabaseSubnet' `
--AddressPrefix '10.20.30.0/24' `
+-AddressPrefix '10.20.20.0/24' `
 -VirtualNetwork $vnet
 
 Add-AzVirtualNetworkSubnetConfig -Name 'PublicWebServiceSubnet' `
--AddressPrefix '10.20.0.0/27' `
+-AddressPrefix '10.20.30.0/24' `
 -VirtualNetwork $vnet
 
 $vnet | Set-AzVirtualNetwork
