@@ -27,6 +27,81 @@ Exercise:
 
 1. Azure portal の **「Cloud Shell」** ウィンドウで **「PowerShell」** セッションを開きます。
 
+<details><summary>時間短縮のため以下の PowerShell コマンドで作成することができます。</summary>
+
+<div>
+    
+```powershell
+$rgName='ContosoResourceGroup'
+$location='westus'
+New-AzResourceGroup -Name $rgname -Location $location
+New-AzVirtualNetwork -Name 'CoreServicesVnet' `
+-ResourceGroupName $rgName `
+-Location $location `
+-AddressPrefix '10.20.0.0/16'
+
+$vnet=Get-AzVirtualNetwork -Name CoreServicesVnet
+
+Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' `
+-AddressPrefix '10.20.0.0/27' `
+-VirtualNetwork $vnet
+
+Add-AzVirtualNetworkSubnetConfig -Name 'SharedServicesSubnet' `
+-AddressPrefix '10.20.10.0/24' `
+-VirtualNetwork $vnet
+
+Add-AzVirtualNetworkSubnetConfig -Name 'DatabaseSubnet' `
+-AddressPrefix '10.20.30.0/24' `
+-VirtualNetwork $vnet
+
+Add-AzVirtualNetworkSubnetConfig -Name 'PublicWebServiceSubnet' `
+-AddressPrefix '10.20.0.0/27' `
+-VirtualNetwork $vnet
+
+$vnet | Set-AzVirtualNetwork
+
+New-AzResourceGroup -Name $rgname -Location $location
+New-AzVirtualNetwork -Name 'ManufacturingVnet' `
+-ResourceGroupName $rgName `
+-Location $location `
+-AddressPrefix '10.30.0.0/16'
+
+$vnet=Get-AzVirtualNetwork -Name CoreServicesVnet
+
+Add-AzVirtualNetworkSubnetConfig -Name 'ManufacturingSystemSubnet' `
+-AddressPrefix '10.30.10.0/24' `
+-VirtualNetwork $vnet
+
+Add-AzVirtualNetworkSubnetConfig -Name 'SensorSubnet1' `
+-AddressPrefix '10.30.20.0/24' `
+-VirtualNetwork $vnet
+
+Add-AzVirtualNetworkSubnetConfig -Name 'SensorSubnet2' `
+-AddressPrefix '10.30.21.0/24' `
+-VirtualNetwork $vnet
+
+Add-AzVirtualNetworkSubnetConfig -Name 'SensorSubnet3' `
+-AddressPrefix '10.30.22.0/24' `
+-VirtualNetwork $vnet
+
+$vnet | Set-AzVirtualNetwork
+
+New-AzResourceGroup -Name $rgname -Location $location
+New-AzVirtualNetwork -Name 'ResearchVnet' `
+-ResourceGroupName $rgName `
+-Location $location `
+-AddressPrefix '10.40.0.0/16'
+
+$vnet=Get-AzVirtualNetwork -Name CoreServicesVnet
+
+Add-AzVirtualNetworkSubnetConfig -Name 'ResearchSystemSubnet' `
+-AddressPrefix '10.40.40.0/24' `
+-VirtualNetwork $vnet
+```
+
+</div>
+</details>
+
 2. Cloud Shell ウィンドウのツールバーで、「ファイルのアップロード/ダウンロード」アイコンをクリックし、ドロップダウン メニューで「アップロード」をクリックして、次のファイル **azuredeploy.json** および **azuredeploy.parameters.json** を CloudShell ホーム ディレクトリにアップロードします。
 
 3. 次の ARM テンプレートをデプロイして、この演習に必要な仮想ネットワークとサブネットを作成します。
