@@ -60,6 +60,7 @@ Add-AzVirtualNetworkSubnetConfig -Name 'PublicWebServiceSubnet' `
 
 $vnet | Set-AzVirtualNetwork
 
+$location='northeurope'
 New-AzResourceGroup -Name $rgname -Location $location
 New-AzVirtualNetwork -Name 'ManufacturingVnet' `
 -ResourceGroupName $rgName `
@@ -86,6 +87,7 @@ Add-AzVirtualNetworkSubnetConfig -Name 'SensorSubnet3' `
 
 $vnet | Set-AzVirtualNetwork
 
+$location='westindia'
 New-AzResourceGroup -Name $rgname -Location $location
 New-AzVirtualNetwork -Name 'ResearchVnet' `
 -ResourceGroupName $rgName `
@@ -97,6 +99,8 @@ $vnet=Get-AzVirtualNetwork -Name CoreServicesVnet
 Add-AzVirtualNetworkSubnetConfig -Name 'ResearchSystemSubnet' `
 -AddressPrefix '10.40.40.0/24' `
 -VirtualNetwork $vnet
+    
+$vnet | Set-AzVirtualNetwork
 ```
 
 </div>
