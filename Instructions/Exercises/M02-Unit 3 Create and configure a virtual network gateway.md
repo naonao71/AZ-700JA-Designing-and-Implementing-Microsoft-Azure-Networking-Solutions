@@ -61,7 +61,6 @@ Add-AzVirtualNetworkSubnetConfig -Name 'PublicWebServiceSubnet' `
 $vnet | Set-AzVirtualNetwork
 
 $location='northeurope'
-New-AzResourceGroup -Name $rgname -Location $location
 New-AzVirtualNetwork -Name 'ManufacturingVnet' `
 -ResourceGroupName $rgName `
 -Location $location `
@@ -92,7 +91,6 @@ Add-AzVirtualNetworkSubnetConfig -Name 'GatewaySubnet' `
 $vnet | Set-AzVirtualNetwork
 
 $location='westindia'
-New-AzResourceGroup -Name $rgname -Location $location
 New-AzVirtualNetwork -Name 'ResearchVnet' `
 -ResourceGroupName $rgName `
 -Location $location `
