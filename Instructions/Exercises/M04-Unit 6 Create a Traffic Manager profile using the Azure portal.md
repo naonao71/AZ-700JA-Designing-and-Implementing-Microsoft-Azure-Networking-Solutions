@@ -154,6 +154,8 @@ Exercise:
 
    ![図 23](../media/check-dnsname-1.png)
 
+3. App Serviceで作成した両方のWebアプリのカスタムドメインから、カスタムドメイン(contoso-tmprofile.trafficmanager.net)を追加します。
+
 3. Web ブラウザータブを開き、**DNS 名**エントリ (contoso-tmprofile.trafficmanager.net) をアドレス バーに貼り付け (または入力し)、Enter キーを押します。
 
 4. Web アプリの既定の Web サイトが表示されます。"404 Web サイトが見つかりません" というメッセージが表示された場合は、Contoso-TMProfilexx Traffic Manager のプロファイルの概要ページからプロファイルを無効化し、プロファイルを有効化します。その後、Web ページを更新します。
